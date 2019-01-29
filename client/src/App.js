@@ -1,33 +1,37 @@
-import React, { Component } from "react";
-import logo from "./SingleYMMLogo.png";
-import "./App.css";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import AuthService from './components/AuthService';
+import withAuth from './components/withAuth';
+const Auth = new AuthService();
 
 class App extends Component {
+
+
+  handleLogout = () => {
+    Auth.logout();
+    this.props.history.replace('/signup');
+  };
+
+  goToEditProfile = () => {
+    this.props.history.replace('/profile');
+  };
+
   render() {
-    
+    console.log(process.env.REACT_APP_SECRET_CODE);
     return (
       <div className="App">
-      
-        <header className="App-header">
+        <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-        </header>
-          
-          <div className="content">
-            <h1 className="heading">Google Fonts in React</h1>
-            <h2 className="subheading">
-              Learn how to add fonts in a React Project
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <hr />
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-          </div>
+          <h2>Welcome {this.props.user.email}</h2>
+        </div>
+        <p className="App-intro">
+          <button type="button" className="btn btn-primary" onClick={this.goToEditProfile}>Go to Profile</button>
+          <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
+        </p>
       </div>
     );
   }
 }
 
-export default App;
+export default withAuth(App);
