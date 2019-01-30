@@ -173,7 +173,7 @@ app.post("/api/species", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 // delete a record in SPECIES collection using its id
-app.get("/api/species/:id", (req, res) =>{
+app.delete("/api/species/:id", (req, res) =>{
   db.Species
   .findById({_id: req.params.id})
   .then(datafoo=>datafoo.remove())
@@ -181,7 +181,7 @@ app.get("/api/species/:id", (req, res) =>{
   .catch(err => res.status(422).json(err));
 })
 // update a record in SPECIES collection using its id
-app.post("/api/species/:id", (req, res) => {
+app.put("/api/species/:id", (req, res) => {
   db.Species
     .findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(dbModel => res.json(dbModel))
@@ -198,7 +198,6 @@ app.get("/api/mothercultures", (req, res) => {
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
-
 // create new record in MOTHERCULTURES collection
 app.post("/api/mothercultures", (req, res) => {
   db.Mothercultures
@@ -206,9 +205,8 @@ app.post("/api/mothercultures", (req, res) => {
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
-
 // delete a record in MOTHERCULTURES collection using its id
-app.get("/api/mothercultures/:id", (req, res) =>{
+app.delete("/api/mothercultures/:id", (req, res) =>{
   db.Mothercultures
   .findById({_id: req.params.id})
   .then(dbModel=>dbModel.remove())
@@ -216,7 +214,7 @@ app.get("/api/mothercultures/:id", (req, res) =>{
   .catch(err => res.status(422).json(err));
 })
 // update a record in MOTHERCULTURES collection using its id
-app.post("/api/mothercultures/:id", (req, res) => {
+app.put("/api/mothercultures/:id", (req, res) => {
   db.Mothercultures
     .findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(dbModel => res.json(dbModel))
@@ -240,7 +238,7 @@ app.post("/api/batch", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 // delete a record in BATCH collection using its id
-app.get("/api/batch/:id", (req, res) =>{
+app.delete("/api/batch/:id", (req, res) =>{
   db.Batch
   .findById({_id: req.params.id})
   .then(dbModel=>dbModel.remove())
@@ -248,13 +246,12 @@ app.get("/api/batch/:id", (req, res) =>{
   .catch(err => res.status(422).json(err));
 })
 // update a record in BATCH collection using its id
-app.post("/api/batch/:id", (req, res) => {
+app.put("/api/batch/:id", (req, res) => {
   db.Batch
     .findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });
-
 
 
 // ADMIN server-to-db calls w/queries
@@ -273,7 +270,7 @@ app.post("/api/admin", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 // delete a record in ADMIN collection using its id
-app.get("/api/admin/:id", (req, res) =>{
+app.delete("/api/admin/:id", (req, res) =>{
   db.Admin
   .findById({_id: req.params.id})
   .then(dbModel=>dbModel.remove())
@@ -281,7 +278,7 @@ app.get("/api/admin/:id", (req, res) =>{
   .catch(err => res.status(422).json(err));
 });
 // update a record in ADMIN collection using its id
-app.post("/api/admin/:id", (req, res) => {
+app.put("/api/admin/:id", (req, res) => {
   db.Admin
     .findOneAndUpdate({ _id: req.params.id }, req.body)
     .then(dbModel => res.json(dbModel))
