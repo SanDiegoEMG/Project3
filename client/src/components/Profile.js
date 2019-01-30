@@ -7,7 +7,9 @@ class Profile extends Component {
 
   state = {
     username: "",
-    email: ""
+    email: "",
+    name:[],
+    name_latin: [],
   };
 
   componentDidMount() {
@@ -17,6 +19,14 @@ class Profile extends Component {
         email: res.data.email
       })
     });
+
+    API.getAllSpecies(this.props.species).then(res => {
+      this.setState ({
+      name: res.data.name_common,
+      name_latin: res.data.name_latin
+    })
+    console.log(this.state)
+  })
   }
 
   render() {
@@ -25,6 +35,8 @@ class Profile extends Component {
         <h1>On the profile page!</h1>
         <p>Username: {this.state.username}</p>
         <p>Email: {this.state.email}</p>
+        <p>mush name: {this.state.name}</p>
+        <p>formal name: {this.state.name_latin}</p>
         <Link to="/">Go home</Link>
       </div>
     )

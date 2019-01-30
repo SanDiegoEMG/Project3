@@ -172,6 +172,15 @@ app.post("/api/species", (req, res) => {
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
+
+// find ONE record from SPECIES using its id
+app.get ("/api/species/:id", (req, res) => {
+  db.Species
+  .findOne({_id: req.params.id})
+  .then(datafoo => res.json(datafoo))
+  .catch(err => res.status(422).json(err));
+}),
+
 // delete a record in SPECIES collection using its id
 app.delete("/api/species/:id", (req, res) =>{
   db.Species
@@ -179,7 +188,7 @@ app.delete("/api/species/:id", (req, res) =>{
   .then(datafoo=>datafoo.remove())
   .then(datafoo => res.json(datafoo))
   .catch(err => res.status(422).json(err));
-})
+}),
 // update a record in SPECIES collection using its id
 app.put("/api/species/:id", (req, res) => {
   db.Species
@@ -187,7 +196,6 @@ app.put("/api/species/:id", (req, res) => {
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 });
-
 
 
 //  mothercultures server-to-db calls w/queries
@@ -198,6 +206,7 @@ app.get("/api/mothercultures", (req, res) => {
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
+
 // create new record in MOTHERCULTURES collection
 app.post("/api/mothercultures", (req, res) => {
   db.Mothercultures
