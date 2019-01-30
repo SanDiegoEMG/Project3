@@ -158,22 +158,40 @@ db.Species
 
 //  EM CODE
 // species server-to-db calls w/queries
+// get json of contents from SPECIES collection
 app.get("/api/species", (req, res) => {
   db.Species
     .find({})
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
-
+// create new record in SPECIES collection
 app.post("/api/species", (req, res) => {
   db.Species
     .create(req.body)
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
+// delete a record in SPECIES collection using its id
+app.get("/api/species/:id", (req, res) =>{
+  db.Species
+  .findById({_id: req.params.id})
+  .then(datafoo=>datafoo.remove())
+  .then(datafoo => res.json(datafoo))
+  .catch(err => res.status(422).json(err));
+})
+// update a record in SPECIES collection using its id
+app.post("/api/species/:id", (req, res) => {
+  db.Species
+    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
 
 
 //  mothercultures server-to-db calls w/queries
+// get json of contents from MOTHERCULTURES collection
 app.get("/api/mothercultures", (req, res) => {
   db.Mothercultures
     .find({})
@@ -181,6 +199,7 @@ app.get("/api/mothercultures", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+// create new record in MOTHERCULTURES collection
 app.post("/api/mothercultures", (req, res) => {
   db.Mothercultures
     .create(req.body)
@@ -188,37 +207,86 @@ app.post("/api/mothercultures", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+// delete a record in MOTHERCULTURES collection using its id
+app.get("/api/mothercultures/:id", (req, res) =>{
+  db.Mothercultures
+  .findById({_id: req.params.id})
+  .then(dbModel=>dbModel.remove())
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
+})
+// update a record in MOTHERCULTURES collection using its id
+app.post("/api/mothercultures/:id", (req, res) => {
+  db.Mothercultures
+    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
 
 // batch server-to-db calls w/queries
+// get json of contents from BATCH collection
 app.get("/api/batch", (req, res) => {
   db.Batch
     .find({})
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
-
+// create new record in BATCH collection
 app.post("/api/batch", (req, res) => {
   db.Batch
     .create(req.body)
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
+// delete a record in BATCH collection using its id
+app.get("/api/batch/:id", (req, res) =>{
+  db.Batch
+  .findById({_id: req.params.id})
+  .then(dbModel=>dbModel.remove())
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
+})
+// update a record in BATCH collection using its id
+app.post("/api/batch/:id", (req, res) => {
+  db.Batch
+    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
 
-// admin server-to-db calls w/queries
+
+
+// ADMIN server-to-db calls w/queries
+// get json of contents from ADMIN collection
 app.get("/api/admin", (req, res) => {
   db.Admin
     .find({})
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
-
+// create new record in ADMIN collection
 app.post("/api/admin", (req, res) => {
   db.Admin
     .create(req.body)
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
-
+// delete a record in ADMIN collection using its id
+app.get("/api/admin/:id", (req, res) =>{
+  db.Admin
+  .findById({_id: req.params.id})
+  .then(dbModel=>dbModel.remove())
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
+});
+// update a record in ADMIN collection using its id
+app.post("/api/admin/:id", (req, res) => {
+  db.Admin
+    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
 
 // END EM CODE
 
