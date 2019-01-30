@@ -25,6 +25,9 @@ const motherculturesSchema = new Schema({
     type: String,
     required: true,
     // spores, liquid culture, grain spawn, sawdust spawn, other
+  },
+  notes: {
+    type: String,
   }
 
 });
