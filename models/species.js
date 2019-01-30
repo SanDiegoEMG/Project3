@@ -10,7 +10,9 @@ const Schema = mongoose.Schema;
         name_common: { 
             type: String, 
         },
-        
+        gestation_time: {
+            type:String,
+        }
     });
     
     const Species = mongoose.model("Species", speciesSchema);

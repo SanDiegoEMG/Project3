@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan'); // used to see requests
 const app = express();
 const db = require('./models');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 // Setting CORS so that any website can
 // Access our API
@@ -23,7 +23,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/appDB', {useNewUrlParser: true});
+// connection to ymmDB database
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ymmDB', {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 
 // Init the express-jwt middleware
@@ -32,7 +33,7 @@ const isAuthenticated = exjwt({
 });
 
 
-// LOGIN ROUTE
+// LOGIN ROUTE 
 app.post('/api/login', (req, res) => {
   db.User.findOne({
     email: req.body.email
@@ -86,6 +87,140 @@ app.use(function (err, req, res, next) {
     next(err);
   }
 });
+
+// code to push data to species collection
+const speciesSeed = [
+  {
+      name_latin: "Hericium erinaceus",
+      name_common: "Lion's Mane",
+      gestation_time: "25"
+  },
+  {
+      name_latin: "Pleurotus ostreatus",
+      name_common: "Pearl Oyster",
+      gestation_time: "10"
+  },
+  {
+      name_latin: "Pleurotus pulmonarius",
+      name_common: "Italian Oyster / Brown Oyster",
+      gestation_time: "10"
+  },
+  {
+      name_latin: "Pleurotus ostreatus var columbinus",
+      name_common: "Blue Oyster",
+      gestation_time: "14"
+  },
+  {
+      name_latin: "Pleurotus citrinopileatus",
+      name_common: "Golden Oyster",
+      gestation_time: "18"
+  },
+  {
+      name_latin: "Pleurotus djamor",
+      name_common: "Pink Oyster",
+      gestation_time: "10"
+  },
+  {
+      name_latin: "Pholiota adiposa",
+      name_common: "Chestnut",
+      gestation_time: "22"
+  },
+  {
+      name_latin: "Pleurotus eringyi",
+      name_common: "Royal Trumpet / King Oyster",
+      gestation_time: "20"
+  },
+  {
+      name_latin: "Lentinula edodes",
+      name_common: "Shiitake",
+      gestation_time: "40"
+  },
+  { 
+      name_latin: "Pholiota nameko",
+      name_common: "Nameko",
+      gestation_time: "25"
+  }
+];
+
+db.Species
+.deleteMany({})
+.then(() => db.Species.collection.insertMany(speciesSeed))
+.then(data => {
+  console.log(data.result.n + " records inserted!");
+  // process.exit(0);
+})
+.catch(err => {
+  console.error(err);
+  // process.exit(1);
+});
+// END seed code for species collection
+
+
+//  EM CODE
+// species server-to-db calls w/queries
+app.get("/api/species", (req, res) => {
+  db.Species
+    .find({})
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+app.post("/api/species", (req, res) => {
+  db.Species
+    .create(req.body)
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+
+//  mothercultures server-to-db calls w/queries
+app.get("/api/mothercultures", (req, res) => {
+  db.Mothercultures
+    .find({})
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+app.post("/api/mothercultures", (req, res) => {
+  db.Mothercultures
+    .create(req.body)
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+
+// batch server-to-db calls w/queries
+app.get("/api/batch", (req, res) => {
+  db.Batch
+    .find({})
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+app.post("/api/batch", (req, res) => {
+  db.Batch
+    .create(req.body)
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+// admin server-to-db calls w/queries
+app.get("/api/admin", (req, res) => {
+  db.Admin
+    .find({})
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+app.post("/api/admin", (req, res) => {
+  db.Admin
+    .create(req.body)
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+
+// END EM CODE
 
 // Send every request to the React app
 // Define any API routes before this runs
