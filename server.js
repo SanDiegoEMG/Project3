@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan'); // used to see requests
 const app = express();
 const db = require('./models');
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 // Setting CORS so that any website can
 // Access our API
