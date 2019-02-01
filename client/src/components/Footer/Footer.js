@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import FilledTextFields from "./Text-fields";
+import FilledTextFields from "./TextFields";
 import ContainedButtons from "./Button";
 
 
