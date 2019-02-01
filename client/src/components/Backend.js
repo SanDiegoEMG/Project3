@@ -3,7 +3,7 @@ import withAuth from './withAuth';
 import API from '../utils/API';
 import { Link } from 'react-router-dom';
 
-class Profile extends Component {
+class Backend extends Component {
 
   state = {
     username: "",
@@ -26,11 +26,9 @@ class Profile extends Component {
         <p>Username: {this.state.username}</p>
         <p>Email: {this.state.email}</p>
         <Link to="/">Go home</Link>
-        <br/>
-        <Link to="/backend">Go to Backend</Link>
       </div>
     )
   }
 }
 
-export default withAuth(Profile);
+export default withAuth(Backend);
