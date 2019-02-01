@@ -5,7 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import FilledTextFields from "./text-fields";
-import ContainedButtons from "./button";
+import ContainedButtons from "./Button";
 
 
 const styles = theme => ({

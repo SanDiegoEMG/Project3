@@ -1,5 +1,5 @@
 import React from "react";
-import ControlledExpansionPanels from "../components/Sidebar/sidebar";
+import ControlledExpansionPanels from "../components/Sidebar/Sidebar";
 import MediaCard from "../components/Cards/cards";
 import Grid from "@material-ui/core/Grid";
 
