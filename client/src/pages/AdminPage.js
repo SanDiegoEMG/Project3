@@ -14,9 +14,9 @@ class App extends Component {
         
         
         <DatePicker></DatePicker>
-        <Table></Table>
+        
         <InputField></InputField>
-
+        <Table></Table>
         {/* PREVIOUS CODE FOR REACT HEADER AND LOGO */}
         {/* <div className="App-header"> */}
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
