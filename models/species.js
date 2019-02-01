@@ -10,12 +10,13 @@ const Schema = mongoose.Schema;
         name_common: { 
             type: String, 
         },
-        
+        gestation: {
+            type: Number,
+        }
     });
     
     const Species = mongoose.model("Species", speciesSchema);
   
   module.exports = Species;
 
-  // END STARTER CODE
   

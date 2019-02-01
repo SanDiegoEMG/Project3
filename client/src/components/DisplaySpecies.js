@@ -1,23 +1,41 @@
-import React, { Component } from 'react';
-import API from '../utils/API';
+import React from "react";
+// import API from '../utils/API';
+import { Container, Row, Col } from "./Grid";
+
+  
 
 
-class DisplaySpecies extends Component {
-    
-    state = {
-        name: "",
-        formalName: "",
-        gestation: 0,
-    };
+// Display Species renders a bootstrap list item
+export function DisplaySpecies({ children }) {
+  return <ul className="list-group">{children}</ul>;
+};
+  
 
-    componentDidMount() {
-        API
-    };
+// SpeciesItem renders a bootstrap list item containing data from the recipe api call
+export function SpeciesItem({
+    name, 
+    formalName,
+    gestation
+  }) 
+  {
+    return (
+      <li className="list-group-item">
+        <Container>
+          <Row>
+            <Col size="xs-8 sm-9">
+              <h4>Common name: {name}</h4>
+              <p>Formal name: {formalName}</p>
+              <p>Gestation: {gestation}</p>
+            </Col>
+          </Row>
+        </Container>
+      </li>
+    );
+  }
 
-    renter() {
-
-    };
-}
 
 
-export default DisplaySpecies;
+
+
+
+  

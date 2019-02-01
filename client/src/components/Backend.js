@@ -1,31 +1,54 @@
 import React, { Component } from 'react';
 import withAuth from './withAuth';
 import API from '../utils/API';
-import { Link } from 'react-router-dom';
-import Form from './Form'
+// import { Link } from 'react-router-dom';
+import { SpeciesItem, DisplaySpecies } from './DisplaySpecies';
+import { Container, Row, Col } from "./Grid";
+
 
 class Backend extends Component {
 
-  state = {
-    username: "",
-    email: ""
-  };
+    state = {
+        mushrooms: [],
+    };
 
   componentDidMount() {
-    API.getUser(this.props.user.id).then(res => {
-      this.setState({
-        username: res.data.username,
-        email: res.data.email
-      })
-    });
+    API.getAllSpecies()
+    .then(res => {
+        this.setState({ mushrooms: res.data })
+        console.log(this.state.mushrooms)
+    })
+    .catch(() =>
+    this.setState({
+      mushrooms: [],
+      message: "No Mushrooms Found"
+    })
+  );
   }
 
   render() {
     return (
-      <div className="container Profile">
-        <Form/>
-        <Link to="/">Go home</Link>
-      </div>
+        <Container>
+           <Row>
+            <Col size="xs-12">
+              {!this.state.mushrooms.length ? (
+                <h1 className="text-center">{this.state.message}</h1>
+              ) : (
+                <DisplaySpecies>
+                  {this.state.mushrooms.map(mushroom => {
+                    return (
+                      <SpeciesItem
+                        name={mushroom.name_common}
+                        formalName={mushroom.name_latin}
+                        gestation={mushroom.gestation}
+                      />
+                    );
+                  })}
+                </DisplaySpecies>
+              )}
+            </Col>
+         </Row>
+        </Container>
     )
   }
 }

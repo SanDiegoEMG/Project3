@@ -36,43 +36,53 @@ const isAuthenticated = exjwt({
 const speciesSeed = [
   {
       name_latin: "Hericium erinaceus",
-      name_common: "Lion's Mane"
+      name_common: "Lion's Mane",
+      
   },
   {
       name_latin: "Pleurotus ostreatus",
-      name_common: "Pearl Oyster"
+      name_common: "Pearl Oyster",
+      gestation: 20
   },
   {
       name_latin: "Pleurotus pulmonarius",
-      name_common: "Italian Oyster / Brown Oyster"
+      name_common: "Italian Oyster / Brown Oyster",
+      gestation: 22
   },
   {
       name_latin: "Pleurotus ostreatus var columbinus",
-      name_common: "Blue Oyster"
+      name_common: "Blue Oyster",
+      gestation: 8
   },
   {
       name_latin: "Pleurotus citrinopileatus",
-      name_common: "Golden Oyster"
+      name_common: "Golden Oyster",
+      gestation: 15
   },
   {
       name_latin: "Pleurotus djamor",
-      name_common: "Pink Oyster"
+      name_common: "Pink Oyster",
+      gestation: 17
   },
   {
       name_latin: "Pholiota adiposa",
-      name_common: "Chestnut"
+      name_common: "Chestnut",
+      gestation: 10
   },
   {
       name_latin: "Pleurotus eringyi",
-      name_common: "Royal Trumpet / King Oyster"
+      name_common: "Royal Trumpet / King Oyster",
+      gestation: 10
   },
   {
       name_latin: "Lentinula edodes",
-      name_common: "Shiitake"
+      name_common: "Shiitake",
+      gestation: 14
   },
   { 
       name_latin: "Pholiota nameko",
-      name_common: "Nameko"
+      name_common: "Nameko",
+      gestation: 5
   }
 ];
 
@@ -143,6 +153,154 @@ app.use(function (err, req, res, next) {
     next(err);
   }
 });
+
+
+
+
+//  EM CODE
+// species server-to-db calls w/queries
+// get json of contents from SPECIES collection
+app.get("/api/species", (req, res) => {
+  db.Species
+    .find({})
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+
+// create new record in SPECIES collection
+app.post("/api/species", (req, res) => {
+  db.Species
+    .create(req.body)
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+// find ONE record from SPECIES using its id
+
+// app.get ("/api/species/:id", (req, res) => {
+//   db.Species
+//   .findOne({_id: req.params.id})
+//   .then(datafoo => res.json(datafoo))
+//   .catch(err => res.status(422).json(err));
+// }),
+
+// delete a record in SPECIES collection using its id
+// app.delete("/api/species/:id", (req, res) =>{
+//   db.Species
+//   .findById({_id: req.params.id})
+//   .then(datafoo=>datafoo.remove())
+//   .then(datafoo => res.json(datafoo))
+//   .catch(err => res.status(422).json(err));
+// }),
+// update a record in SPECIES collection using its id
+// app.put("/api/species/:id", (req, res) => {
+//   db.Species
+//     .findOneAndUpdate({ _id: req.params.id }, req.body)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err));
+// });
+
+
+//  mothercultures server-to-db calls w/queries
+// get json of contents from MOTHERCULTURES collection
+// app.get("/api/mothercultures", (req, res) => {
+//   db.Mothercultures
+//     .find({})
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+
+// create new record in MOTHERCULTURES collection
+// app.post("/api/mothercultures", (req, res) => {
+//   db.Mothercultures
+//     .create(req.body)
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+// delete a record in MOTHERCULTURES collection using its id
+// app.delete("/api/mothercultures/:id", (req, res) =>{
+//   db.Mothercultures
+//   .findById({_id: req.params.id})
+//   .then(dbModel=>dbModel.remove())
+//   .then(dbModel => res.json(dbModel))
+//   .catch(err => res.status(422).json(err));
+// })
+// update a record in MOTHERCULTURES collection using its id
+// app.put("/api/mothercultures/:id", (req, res) => {
+//   db.Mothercultures
+//     .findOneAndUpdate({ _id: req.params.id }, req.body)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err));
+// });
+
+
+// batch server-to-db calls w/queries
+// get json of contents from BATCH collection
+// app.get("/api/batch", (req, res) => {
+//   db.Batch
+//     .find({})
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+// create new record in BATCH collection
+// app.post("/api/batch", (req, res) => {
+//   db.Batch
+//     .create(req.body)
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+// delete a record in BATCH collection using its id
+// app.delete("/api/batch/:id", (req, res) =>{
+//   db.Batch
+//   .findById({_id: req.params.id})
+//   .then(dbModel=>dbModel.remove())
+//   .then(dbModel => res.json(dbModel))
+//   .catch(err => res.status(422).json(err));
+// })
+// update a record in BATCH collection using its id
+// app.put("/api/batch/:id", (req, res) => {
+//   db.Batch
+//     .findOneAndUpdate({ _id: req.params.id }, req.body)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err));
+// });
+
+
+// ADMIN server-to-db calls w/queries
+// get json of contents from ADMIN collection
+// app.get("/api/admin", (req, res) => {
+//   db.Admin
+//     .find({})
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+// create new record in ADMIN collection
+// app.post("/api/admin", (req, res) => {
+//   db.Admin
+//     .create(req.body)
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+// delete a record in ADMIN collection using its id
+// app.delete("/api/admin/:id", (req, res) =>{
+//   db.Admin
+//   .findById({_id: req.params.id})
+//   .then(dbModel=>dbModel.remove())
+//   .then(dbModel => res.json(dbModel))
+//   .catch(err => res.status(422).json(err));
+// });
+// update a record in ADMIN collection using its id
+// app.put("/api/admin/:id", (req, res) => {
+//   db.Admin
+//     .findOneAndUpdate({ _id: req.params.id }, req.body)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(422).json(err));
+// });
+
+
+
+
 
 // Send every request to the React app
 // Define any API routes before this runs
