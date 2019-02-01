@@ -1,37 +1,32 @@
-import React, { Component } from "react";
-import Calendar from "react-big-calendar";
-import moment from "moment";
-
-import "./App.css";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import logo from "./logo.svg";
-
-const localizer = Calendar.momentLocalizer(moment);
-
-class App extends Component {
+import React, { Component } from 'react';
+import PropTypes from "prop-types";
+import Calendar from 'react-calendar';
+import { withStyles } from '@material-ui/core';
+const styles = theme => ({
+  onChange: {
+    color: "#fcfc1e5"
+  }
+})
+ 
+class MyApp extends Component {
   state = {
-    events: [
-      {
-        start: new Date(),
-        end: new Date(moment().add(1, "days")),
-        title: "Some title"
-      }
-    ]
-  };
-
+    date: new Date(),
+  }
+ 
+  onChange = date => this.setState({ date })
+ 
   render() {
     return (
-      <div className="App">
-        <Calendar
-          localizer={localizer}
-          defaultDate={new Date()}
-          defaultView="month"
-          events={this.state.events}
-          style={{ height: "100vh" }}
+      <div>
+        <Calendar 
+          onChange={this.onChange}
+          value={this.state.date}
         />
       </div>
     );
   }
 }
-
-export default App;
+MyApp.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+export default withStyles(styles)(MyApp);
