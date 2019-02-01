@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import Calendar from 'react-calendar';
 import { withStyles } from '@material-ui/core';
-
 const styles = theme => ({
   onChange: {
     color: "#fcfc1e5"

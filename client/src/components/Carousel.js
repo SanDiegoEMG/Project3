@@ -7,10 +7,10 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-// import SwipeableViews from "react-swipeable-views";
-// import { autoPlay } from "react-swipeable-views-utils";
+import SwipeableViews from "react-swipeable-views";
+import { autoPlay } from "react-swipeable-views-utils";
 
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
@@ -93,7 +93,7 @@ class SwipeableTextMobileStepper extends React.Component {
         <Paper square elevation={0} className={classes.header}>
           <Typography>{tutorialSteps[activeStep].label}</Typography>
         </Paper>
-        {/* <AutoPlaySwipeableViews
+        <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
           onChangeIndex={this.handleStepChange}
@@ -110,7 +110,7 @@ class SwipeableTextMobileStepper extends React.Component {
               ) : null}
             </div>
           ))}
-        </AutoPlaySwipeableViews> */}
+        </AutoPlaySwipeableViews>
         <MobileStepper
           steps={maxSteps}
           position="static"

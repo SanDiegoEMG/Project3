@@ -7,8 +7,6 @@ import Calendar from "../components/Calendar/Calendar";
 // let imgUrl = 'https://travelblond.files.wordpress.com/2015/11/gaslamp-quarter.jpg';
 const styles = theme => ({
   
-
-
 });
 
 function CenteredGrid(props) {
@@ -25,12 +23,8 @@ function CenteredGrid(props) {
         </Grid>
 
         <Grid item xs={6}>
-          <p className={classes.paper}>
-            <Calendar></Calendar>
-          </p>
+          <Calendar></Calendar>
         </Grid>
-
-        
 
         <Grid item xs={3}>
           <p className={classes.paper}>
