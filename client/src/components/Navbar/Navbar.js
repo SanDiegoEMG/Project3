@@ -55,7 +55,7 @@ class Navbar extends Component {
                         <a className="nav-link" href="/" onClick={() => this.Auth.logout()}>Logout</a>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/speciespage">Our Mushrooms</Link>
+                        <Link className="nav-link" to="/ourmushroom">Our Mushrooms</Link>
                     </li>
                 </ul>
             );
