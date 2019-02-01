@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import Home from "./pages/HomePage"
+import Home from "./pages/HomePage";
+import Footer from "./components/Footer/Footer";
 import './App.css';
 
 class App extends Component {
@@ -10,7 +11,9 @@ class App extends Component {
     return (
       <div className="App">
       {/* NEW HOME COMPONENT */}
+      
         <Home></Home>
+        <Footer></Footer>
 
         {/* PREVIOUS CODE FOR REACT HEADER AND LOGO */}
         {/* <div className="App-header"> */}
