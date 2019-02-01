@@ -7,5 +7,15 @@ export default {
   // sign up a user to our service
   signUpUser: (username, email, password) => {
     return axios.post('api/signup', {username: username, email: email, password: password});
-  }
+  },
+  // get all mushroom species data as array of objects
+  getAllSpecies: () => {
+    return axios.get(`/api/species`);
+  },
+
+  // get data info associeated with one mushroom species
+  getOneSpecies: () => {
+    return axios.get(`/api/species/:id`);
+  },
+
 };
