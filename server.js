@@ -154,6 +154,15 @@ app.get("/api/species", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+// get one species by id
+app.get("/api/species/:id", (req, res) =>{
+  db.Species
+  .findById({_id: req.params.id})
+  .then(datafoo=>datafoo.remove())
+  .then(datafoo => res.json(datafoo))
+  .catch(err => res.status(422).json(err));
+}),
+
 // create new species document
 app.post("/api/species", (req, res) => {
   db.Species
@@ -161,6 +170,23 @@ app.post("/api/species", (req, res) => {
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
+
+// get one document in SPECIES collection using its id
+app.get("/api/species/:id", (req, res) =>{
+  db.Species
+  .findById({_id: req.params.id})
+  .then(datafoo=>datafoo.remove())
+  .then(datafoo => res.json(datafoo))
+  .catch(err => res.status(422).json(err));
+}),
+
+// update a document in SPECIES collection using its id
+app.put("/api/species/:id", (req, res) =>{
+  db.Species
+  .findOneAndUpdate({_id: req.params.id}, req.body)
+  .then(datafoo => res.json(datafoo))
+  .catch(err => res.status(422).json(err));
+}),
 
 // delete a record in SPECIES collection using its id
 app.delete("/api/species/:id", (req, res) =>{
