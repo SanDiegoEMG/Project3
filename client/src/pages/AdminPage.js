@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import Home from "./pages/HomePage"
-import './App.css';
+import DatePicker from '../components/DatePicker/DatePicker';
+import Table from '../components/Table/Table';
+import InputField from '../components/InputField/InputField';
 
 class App extends Component {
 
@@ -10,7 +11,11 @@ class App extends Component {
     return (
       <div className="App">
       {/* NEW HOME COMPONENT */}
-        <Home></Home>
+        
+        
+        <DatePicker></DatePicker>
+        <Table></Table>
+        <InputField></InputField>
 
         {/* PREVIOUS CODE FOR REACT HEADER AND LOGO */}
         {/* <div className="App-header"> */}

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+
 import registerServiceWorker from './registerServiceWorker';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import axios from "axios";
@@ -12,6 +13,9 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
+import SpeciesCalendar from './pages/CalendarPage';
+import PageAdmin from './pages/AdminPage';
+
 
 // Here is if we have an id_token in localStorage
 if(localStorage.getItem("id_token")) {
@@ -24,6 +28,8 @@ ReactDOM.render(
         <div>
             <Navbar />
             <Route exact path="/" component={App} />
+            <Route exact path="/speciescalendar" component={SpeciesCalendar} />
+            <Route exact path="/adminpage" component={PageAdmin} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
