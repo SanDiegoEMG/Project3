@@ -23,7 +23,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/appDB', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ymmDB', {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 
 // Init the express-jwt middleware
@@ -86,6 +86,93 @@ app.use(function (err, req, res, next) {
     next(err);
   }
 });
+
+
+
+// Code to seed species collection
+const speciesSeed = [
+  {
+      name_latin: "Hericium erinaceus",
+      name_common: "Lion's Mane",
+      gestation: 15
+  },
+  {
+      name_latin: "Pleurotus ostreatus",
+      name_common: "Pearl Oyster",
+      gestation: 20
+  },
+  {
+      name_latin: "Pleurotus pulmonarius",
+      name_common: "Italian Oyster / Brown Oyster",
+      gestation: 17
+  },
+  {
+      name_latin: "Pleurotus ostreatus var columbinus",
+      name_common: "Blue Oyster",
+      gestation: 10
+  },
+  {
+      name_latin: "Pleurotus citrinopileatus",
+      name_common: "Golden Oyster",
+      gestation: 12
+  },
+  {
+      name_latin: "Pleurotus djamor",
+      name_common: "Pink Oyster",
+      gestation: 15
+  },
+  {
+      name_latin: "Pholiota adiposa",
+      name_common: "Chestnut",
+      gestation: 22
+  },
+  {
+      name_latin: "Pleurotus eringyi",
+      name_common: "Royal Trumpet / King Oyster",
+      gestation: 20
+  },
+];
+
+db.Species
+.deleteMany({})
+.then(() => db.Species.collection.insertMany(speciesSeed))
+.then(data => {
+  console.log(data.result.n + " records inserted!");
+})
+.catch(err => {
+  console.error(err);
+});
+// END seed code
+
+
+// back-end api routes for species collection
+// get json of all documents in Species collection
+app.get("/api/species", (req, res) => {
+  db.Species
+    .find({})
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+// create new species document
+app.post("/api/species", (req, res) => {
+  db.Species
+    .create(req.body)
+    .then(datafoo => res.json(datafoo))
+    .catch(err => res.status(400).json(err));
+});
+
+// delete a record in SPECIES collection using its id
+app.delete("/api/species/:id", (req, res) =>{
+  db.Species
+  .findById({_id: req.params.id})
+  .then(datafoo=>datafoo.remove())
+  .then(datafoo => res.json(datafoo))
+  .catch(err => res.status(422).json(err));
+}),
+
+
+
 
 // Send every request to the React app
 // Define any API routes before this runs
