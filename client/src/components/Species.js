@@ -4,7 +4,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 
 
-class Profile extends Component {
+class Species extends Component {
   state = {
     username: "",
     email: "",
@@ -49,7 +49,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="container Profile">
-        <h1>On the profile page!</h1>
+        <h1>On the Species page!</h1>
         <p>Username: {this.state.username}</p>
         <p>Email: {this.state.email}</p>
         <Link to="/">Go home</Link>
@@ -71,4 +71,4 @@ class Profile extends Component {
   }
 }
 
-export default withAuth(Profile);
+export default withAuth(Species);

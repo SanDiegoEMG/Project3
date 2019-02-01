@@ -16,15 +16,15 @@ const batchSchema = new Schema({
     },
     phase: {
         type: String,
-        // list of options .... changing this triggers different functions to calculate 'projected harvest'
+        // list of options = incubation - holding - growing - harvesting - retired.... changing this triggers different actions including 'projected harvest'
     },
     source: {
         type: String,
         // purchase source of the spawn in the bags .. would be nice to have a drop down of previously entered items
     },
-    parent: {
+    motherculture: {
         type: String,
-        // strain source of spawn in the bags
+        // strain source of spawn in the bags ...  manufacturer should be an option
     },
     notes: {
         type: String,
