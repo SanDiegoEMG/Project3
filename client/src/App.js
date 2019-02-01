@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 import Home from "./pages/HomePage"
 import './App.css';
-import BottomAppBar from "./components/Footer/footer"
+import BottomAppBar from "./components/Footer/Footer"
 
 
 class App extends Component {
