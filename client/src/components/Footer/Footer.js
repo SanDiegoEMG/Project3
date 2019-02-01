@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import FilledTextFields from "./TxtFields";
-import ContainedButtons from "./Button";
+
+import FilledTextFields from "./text-fields";
+import ContainedButtons from "./button";
+
 
 const styles = theme => ({
   appBar: {
@@ -69,7 +71,9 @@ class BottomAppBar extends Component {
             <div>
               <FilledTextFields />
             </div>
-            <div className="col-2-md">
+
+            <div>
+
               <ContainedButtons />
             </div>
           </div>

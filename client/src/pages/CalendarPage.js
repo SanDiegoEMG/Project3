@@ -2,12 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Calendar from "../components/Calendar/Calendar";
 
 // let imgUrl = 'https://travelblond.files.wordpress.com/2015/11/gaslamp-quarter.jpg';
 const styles = theme => ({
   
-
-
 });
 
 function CenteredGrid(props) {
@@ -20,19 +19,12 @@ function CenteredGrid(props) {
 
         {/* THIS GRID IS JUST FOR ALIGNMENT */}
         <Grid item xs={3}>
-          <p className={classes.paper}>leave blank</p>
+          <p className={classes.paper}></p>
         </Grid>
 
-        <Grid item xs={3}>
-          <p className={classes.paper}>
-            hello2
-          </p>
+        <Grid item xs={6}>
+          <Calendar></Calendar>
         </Grid>
-
-        <Grid item xs={3}>
-          <p className={classes.paper}>hello3</p>
-        </Grid>
-        
 
         <Grid item xs={3}>
           <p className={classes.paper}>
