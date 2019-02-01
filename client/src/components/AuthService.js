@@ -1,5 +1,6 @@
 import decode from 'jwt-decode';
 import axios from 'axios';
+
 export default class AuthService {
 
     login = (email, password) => {
@@ -55,7 +56,4 @@ export default class AuthService {
         // this will reload the page and reset the state of the application
         window.location.reload('/');
     }
-
-
-
 }

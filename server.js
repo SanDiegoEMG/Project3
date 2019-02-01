@@ -23,13 +23,70 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/appDB', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ymmDB', {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 
 // Init the express-jwt middleware
 const isAuthenticated = exjwt({
   secret: 'all sorts of code up in here'
 });
+
+
+// START seed code
+const speciesSeed = [
+  {
+      name_latin: "Hericium erinaceus",
+      name_common: "Lion's Mane"
+  },
+  {
+      name_latin: "Pleurotus ostreatus",
+      name_common: "Pearl Oyster"
+  },
+  {
+      name_latin: "Pleurotus pulmonarius",
+      name_common: "Italian Oyster / Brown Oyster"
+  },
+  {
+      name_latin: "Pleurotus ostreatus var columbinus",
+      name_common: "Blue Oyster"
+  },
+  {
+      name_latin: "Pleurotus citrinopileatus",
+      name_common: "Golden Oyster"
+  },
+  {
+      name_latin: "Pleurotus djamor",
+      name_common: "Pink Oyster"
+  },
+  {
+      name_latin: "Pholiota adiposa",
+      name_common: "Chestnut"
+  },
+  {
+      name_latin: "Pleurotus eringyi",
+      name_common: "Royal Trumpet / King Oyster"
+  },
+  {
+      name_latin: "Lentinula edodes",
+      name_common: "Shiitake"
+  },
+  { 
+      name_latin: "Pholiota nameko",
+      name_common: "Nameko"
+  }
+];
+
+db.Species
+.deleteMany({})
+.then(() => db.Species.collection.insertMany(speciesSeed))
+.then(data => {
+  console.log(data.result.n + " records inserted!");
+})
+.catch(err => {
+  console.error(err);
+});
+// END seed code
+
 
 
 // LOGIN ROUTE

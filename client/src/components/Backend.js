@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import withAuth from './withAuth';
 import API from '../utils/API';
 import { Link } from 'react-router-dom';
+import Form from './Form'
 
 class Backend extends Component {
 
@@ -22,9 +23,7 @@ class Backend extends Component {
   render() {
     return (
       <div className="container Profile">
-        <h1>On the profile page!</h1>
-        <p>Username: {this.state.username}</p>
-        <p>Email: {this.state.email}</p>
+        <Form/>
         <Link to="/">Go home</Link>
       </div>
     )
