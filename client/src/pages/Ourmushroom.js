@@ -1,8 +1,7 @@
 import React from "react";
 import ControlledExpansionPanels from "../components/Sidebar/Sidebar";
-import MediaCard from "../components/Cards/Cards";
+import MediaCard from "../components/Cards/card1";
 import Grid from "@material-ui/core/Grid";
-
 
 function Mushroom(props) {
   // const { classes } = props;
