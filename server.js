@@ -144,7 +144,6 @@ db.Species
 });
 // END seed code
 
-
 // back-end api routes for species collection
 // get json of all documents in Species collection
 app.get("/api/species", (req, res) => {

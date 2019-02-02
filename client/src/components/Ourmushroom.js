@@ -1,10 +1,13 @@
 import React from "react";
-import ControlledExpansionPanels from "../components/Sidebar/Sidebar";
-import MediaCard from "../components/Cards/Cards";
+import ControlledExpansionPanels from "./Sidebar/Sidebar";
+import MediaCard from "./Cards/Cards";
 import Grid from "@material-ui/core/Grid";
 
 
-function Mushroom(props) {
+function Ourmushroom(props) {
+
+  console.log(props)
+
   // const { classes } = props;
   return (
     // <div className={classes.root}>
@@ -13,12 +16,13 @@ function Mushroom(props) {
 
       <Grid container spacing={22}>
       
-
         <Grid item xs={3} style={{marginTop: 100}}>
           <ControlledExpansionPanels />
         </Grid>
+
         <Grid item xs={1}></Grid>
-        <Grid item xs={2}><MediaCard /></Grid>
+
+        <Grid item xs={2}><MediaCard speciesList={props.speciesList}/></Grid>
         <Grid item xs={2}><MediaCard /></Grid>
         <Grid item xs={2}><MediaCard /></Grid>
         <Grid item xs={2}><MediaCard /></Grid>
@@ -28,4 +32,4 @@ function Mushroom(props) {
 
   )
 };
-export default Mushroom;
+export default Ourmushroom;

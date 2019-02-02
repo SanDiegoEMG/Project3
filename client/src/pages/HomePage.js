@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import API from "../utils/API"
 
 let imgUrl = 'https://travelblond.files.wordpress.com/2015/11/gaslamp-quarter.jpg';
 const styles = theme => ({
@@ -33,15 +32,7 @@ const styles = theme => ({
   }
 });
 
-// holding place for this code - will be moved to mushrooms pages ... delivers all species in an array of objects
-function showSpecies () {
-  API.getAllSpecies() 
-  .then(res => {console.log(res.data)})
-  .catch(err => console.log(err));
-}
 
-showSpecies()
-// end code to be moved to mushroom pages
 
 function CenteredGrid(props) {
   const { classes } = props;

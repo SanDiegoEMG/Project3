@@ -72,7 +72,7 @@ class Navbar extends Component {
                         <Link className="nav-link" to="/speciescalendar">Calendar</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/ourmushroom">Our Mushrooms</Link>
+                        <Link className="nav-link" to="/mushroom">Our Mushrooms</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/adminpage">Admin</Link>

@@ -16,7 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.6.1",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.9"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.1",
@@ -24,6 +24,7 @@
     "bcrypt-nodejs": "^0.0.3",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
+    "global": "^4.3.2",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.6",
