@@ -61,20 +61,20 @@ class MushPage extends Component {
         <Grid container spacing={24}>
           
         <Grid item xs={1}></Grid>
-        <Grid item xs={2}><MediaCard /> { showMushData} </Grid>
+        <Grid item xs={2}><MediaCard /> { showMushData[0]} </Grid>
 
         <Grid item xs={1}></Grid>
-        <Grid item xs={2}><MediaCard /> </Grid>
+        <Grid item xs={2}><MediaCard />{ showMushData[1]} </Grid>
 
         <Grid item xs={1}></Grid>
-        <Grid item xs={2}><MediaCard /> </Grid>
+        <Grid item xs={2}><MediaCard />{ showMushData[2]} </Grid>
 
         <Grid item xs={1}></Grid>
-        <Grid item xs={2}><MediaCard /> { test } </Grid>
+        <Grid item xs={2}><MediaCard />{ showMushData[3]} </Grid>
 
         <Grid item xs={3} style={{marginTop: 100}}>
             <ControlledExpansionPanels /> </Grid>
-          <Grid item xs={8} > <RecipeReviewCard/></Grid>
+          <Grid item xs={8} > <RecipeReviewCard/>{ test } </Grid>
         </Grid>
 
       </div>
