@@ -20,26 +20,12 @@ const styles = {
 
 
 let imgUrl = 'https://cdn.pixabay.com/photo/2014/07/10/20/55/mushroom-389421_960_720.jpg';
-
+let MushroomTypeTitle = 'Type Three Of Mushroom'
 
 
 function MediaCard(props) {
     
-    const { classes } = props;
-
-    function sendImageLink(e){
-        e.preventDefault();
-        console.log("I need to return a value on click");
-        return  (
-            imgUrl
-            )
-    }
-
-    // function showMushroom4(e) {
-    //     e.preventDefault();
-    //     console.log('The link was clicked');
-        
-    // }
+    const { classes, modifyCardSrc } = props;
 
     return (
       <Card className={classes.card}>
@@ -52,7 +38,7 @@ function MediaCard(props) {
         </CardActionArea>
         <CardActions>
           
-          <Button size="small" color="primary" onClick={sendImageLink}>
+          <Button size="small" color="primary" onClick={()=>modifyCardSrc(imgUrl, MushroomTypeTitle)}>
             Learn More
           </Button>
         </CardActions>

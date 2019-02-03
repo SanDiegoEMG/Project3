@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import API from "../utils/API"
+// import API from "../utils/API"
 import './HomeStyle.css';
 
 
@@ -13,7 +13,10 @@ const styles = theme => ({
     // padding: theme.spacing.unit * 2,
     textAlign: "center",
     backgroundColor: "none",
-    color: theme.palette.text.secondary
+    color: "4e4a4a",
+    fontFamily: "serif",
+    fontSize: "larger",
+    fontWeight: 525,
   },
   root: {
     backgroundImage : 'url(' + imgUrl + ')',
@@ -24,6 +27,20 @@ const styles = theme => ({
     marginTop: 0,
     backgroundColor: "#fcf1e5",
     height: 500
+  },
+  headline: {
+    fontFamily: "san-serif",
+    fontSize: "x-large",
+    fontWeight: 600,
+    marginBottom: 0,
+    color: "#000000"
+  },
+  headline2: {
+    fontFamily: "san-serif",
+    fontSize: "23px",
+    fontWeight: 600,
+    marginBottom: 0,
+    color: "#2f2f2f"
   }
 });
 
@@ -43,11 +60,11 @@ function CenteredGrid(props) {
         <Grid item xs={7}>
           <p className={classes.paper}>
             <Paper style={{padding: 10, marginTop: 455}}>
-              
-                Big Box
-              
-              <br></br>
-              Two words.
+              <p className={classes.headline}>
+                Welcome to You Me Mushrooms!
+              </p>
+              <hr></hr>
+              Growing and harvesting specialty gourmet and medicinal mushrooms for San Diego restaurants, and neighborhood markets, and community members.
           </Paper>
           </p>
         </Grid>
@@ -61,11 +78,11 @@ function CenteredGrid(props) {
         <Grid item xs={7}>
             <p className={classes.paper}>
               <Paper style={{padding: 10, marginBottom: 200}}>
-                
-                  Big Box 2
-                
-                 <br></br>
-                  One.
+                <p className={classes.headline2}>
+                Local. Nutritious. Delicious. Sustainable.                
+                </p> 
+                <hr></hr>
+                 Available at local restaurants, neighborhood markets, and direct to public sale.
               </Paper>
             </p>
             </Grid>

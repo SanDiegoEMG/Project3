@@ -16,19 +16,11 @@ const styles = {
   }
 };
 let imgUrl = 'https://cdn.pixabay.com/photo/2016/04/05/11/26/mushrooms-1309246_960_720.jpg';
+let MushroomTypeTitle = "Type Two of Mushroom";
 
 function MediaCard(props) {
-    const { classes } = props;
+    const { classes,modifyCardSrc } = props;
 
-
-
-    function showMushroom4(e) {
-        e.preventDefault();
-        console.log('The link was clicked');
-        
-        // HERE WE WOULD EXPORT OR RETURN A NEW VALUE FOR THE Mushroom4Gallery
-        
-    }
 
     return (
       <Card className={classes.card}>
@@ -41,7 +33,7 @@ function MediaCard(props) {
         </CardActionArea>
         <CardActions>
           
-          <Button size="small" color="primary" onClick={showMushroom4}>
+          <Button size="small" color="primary" onClick={()=>modifyCardSrc(imgUrl, MushroomTypeTitle)}>
             Learn More
           </Button>
         </CardActions>

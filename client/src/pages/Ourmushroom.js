@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import ControlledExpansionPanels from "../components/Sidebar/Sidebar";
 import MediaCard from "../components/Cards/Cards";
 import MediaCard2 from "../components/Cards/Card2";
@@ -8,8 +8,21 @@ import Grid from "@material-ui/core/Grid";
 import MushroomImageCard1 from "../components/MushroomGallery/Mushroom4Gallery";
 
 
-function Mushroom(props) {
+class Mushroom extends Component {
+
+
+    state ={
+      currentSrc:null,
+      currentTitle: null
+    }
+
+
+  modifyCardSrc = (src, MushroomTypeTitle) => {
+    this.setState({currentSrc:src});
+    this.setState({currentTitle:MushroomTypeTitle});
+  }
   // const { classes } = props;
+  render(){
   return (
     // <div className={classes.root}>
     <div className="Mushroompage">
@@ -23,14 +36,14 @@ function Mushroom(props) {
         </Grid>
         
         <Grid item xs={1}></Grid>
-        <Grid item xs={2}><MediaCard /></Grid>
-        <Grid item xs={2}><MediaCard2 /></Grid>
-        <Grid item xs={2}><MediaCard3 /></Grid>
-        <Grid item xs={2}><MediaCard4 /></Grid>
+        <Grid item xs={2}><MediaCard modifyCardSrc={this.modifyCardSrc} /></Grid>
+        <Grid item xs={2}><MediaCard2 modifyCardSrc={this.modifyCardSrc} /></Grid>
+        <Grid item xs={2}><MediaCard3 modifyCardSrc={this.modifyCardSrc} /></Grid>
+        <Grid item xs={2}><MediaCard4 modifyCardSrc={this.modifyCardSrc} /></Grid>
         
 
         <Grid item xs={4}></Grid>
-        <Grid item xs={6}><MushroomImageCard1></MushroomImageCard1></Grid>
+        <Grid item xs={6}><MushroomImageCard1 src={this.state.currentSrc} titleOfMush={this.state.currentTitle} /></Grid>
         <Grid item xs={2}></Grid>
         
         </Grid>
@@ -38,5 +51,7 @@ function Mushroom(props) {
     </div>
 
   )
+  }
 };
+
 export default Mushroom;
