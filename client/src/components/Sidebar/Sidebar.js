@@ -41,36 +41,30 @@ class ControlledExpansionPanels extends React.Component {
       <div className={classes.root}>
         <ExpansionPanel
           expanded={expanded === "panel1"}
-          onChange={this.handleChange("panel1")}
-        >
+          onChange={this.handleChange("panel1")}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Link 1</Typography>
+          {/* <Typography className={classes.heading}>Link 1</Typography> */}
             <Typography className={classes.secondaryHeading}>
-              Mushy Ref 1
+              Mushy Word 1
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-              feugiat. Aliquam eget maximus est, id dignissim quam.
+              Definition 1
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
           expanded={expanded === "panel2"}
-          onChange={this.handleChange("panel2")}
-        >
+          onChange={this.handleChange("panel2")}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Link 2</Typography>
             <Typography className={classes.secondaryHeading}>
-              Mushy Ref 2
+              Mushy Word 2
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Donec placerat, lectus sed mattis semper, neque lectus feugiat
-              lectus, varius pulvinar diam eros in elit. Pellentesque convallis
-              laoreet laoreet.
+             Definition 2
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -79,15 +73,13 @@ class ControlledExpansionPanels extends React.Component {
           onChange={this.handleChange("panel3")}
         >
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Link 3</Typography>
             <Typography className={classes.secondaryHeading}>
-              Mushy Ref 3
+              Mushy Word 3
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+              Definition 3
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -96,15 +88,14 @@ class ControlledExpansionPanels extends React.Component {
           onChange={this.handleChange("panel4")}
         >
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>Link 4</Typography>
+        
             <Typography className={classes.secondaryHeading}>
-              Mushy Ref 4
+              Mushy Word 4
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
-              sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+            Definition 4
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>

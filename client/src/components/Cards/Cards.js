@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
+// import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 // import Button from "@material-ui/core/Button";
@@ -14,39 +14,38 @@ const styles = {
     maxWidth: 345
   },
   media: {
-    height: 140
+    height: 140,
   }
 };
 
 function MediaCard(props) {
   const { classes } = props;
-  console.log("this is a prop", props)
+  console.log("Awww props: ", props)
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image="../assets/images/mush-image.jpg"
+          title="Button Mushroom"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Mushrooms
           </Typography>
           <Typography component="p">
-            Mushrooms are a widespread group, with over 6,000 species, ranging
-            across all continents
+            Species Name here
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        {/* <Button size="small" color="primary">
+      {/* <CardActions>
+        <Button size="small" color="primary">
           Share
         </Button>
         <Button size="small" color="primary">
           Learn More
-        </Button> */}
-      </CardActions>
+        </Button>
+      </CardActions> */}
     </Card>
   );
 }

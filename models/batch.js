@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 const batchSchema = new Schema({
     batchNum: { 
-        type: Date, 
-        default: Date.now 
+        type: Number, 
+    },
+    bagNum: {
+        type: Number
     },
     species: {
         type: String,
