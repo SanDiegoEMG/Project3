@@ -3,10 +3,8 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
-import FilledTextFields from "./TextFields";
-import ContainedButtons from "./Button";
-
+import FilledTextFields from "../Footer/TxtFields";
+import ContainedButtons from "../Footer/Button";
 
 const styles = theme => ({
   appBar: {

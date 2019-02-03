@@ -32,8 +32,6 @@ const styles = theme => ({
   }
 });
 
-
-
 function CenteredGrid(props) {
   const { classes } = props;
 
