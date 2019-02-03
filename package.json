@@ -28,6 +28,7 @@
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.6",
     "morgan": "^1.9.1",
-    "react-calendar": "^2.18.1"
+    "react-calendar": "^2.18.1",
+    "react-event-listener": "^0.6.6"
   }
 }

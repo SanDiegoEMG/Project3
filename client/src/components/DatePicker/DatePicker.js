@@ -28,7 +28,7 @@ function DatePickers(props) {
 
   return (
     <div className={classes.root}>
-        <Grid container spacing={22}>
+        <Grid container spacing={24} style={{width: '100%'}}>
 
             <Grid item xs={1}>
             </Grid>

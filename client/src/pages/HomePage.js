@@ -4,6 +4,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import API from "../utils/API"
+import './HomeStyle.css';
+
 
 let imgUrl = 'https://travelblond.files.wordpress.com/2015/11/gaslamp-quarter.jpg';
 const styles = theme => ({
@@ -16,20 +18,12 @@ const styles = theme => ({
   root: {
     backgroundImage : 'url(' + imgUrl + ')',
     flexGrow: 1,
-    position: "absolute",
     backgroundSize: 1000,
-    backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundAttachment: 'fixed',
     // SHOULD CHANGE MARGINTOP WITH NEW NAVBAR
     marginTop: 0,
     backgroundColor: "#fcf1e5",
-    height: 1000
-  },
-  secondCardOverlap: {
-    position: "absolute",
-    marginLeft: 500,
-    marginTop: 390
+    height: 500
   }
 });
 
@@ -49,7 +43,7 @@ function CenteredGrid(props) {
   return (
     <div className={classes.root}>
 
-      <Grid container spacing={22}>
+      <Grid container spacing={16} style={{width: '100%'}}>
 
         {/* THIS GRID IS JUST FOR ALIGNMENT */}
         <Grid item xs={1}>
@@ -58,12 +52,12 @@ function CenteredGrid(props) {
 
         <Grid item xs={7}>
           <p className={classes.paper}>
-            <Paper style={{padding: 10, marginTop: 15}}>
-              <h1>
-                Title 1
-              </h1>
+            <Paper style={{padding: 10, marginTop: 455}}>
+              
+                Big Box
+              
               <br></br>
-             Doing new comment et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+              Two words.
           </Paper>
           </p>
         </Grid>
@@ -72,21 +66,24 @@ function CenteredGrid(props) {
           <p className={classes.paper}></p>
         </Grid>
         
-        <div className={classes.secondCardOverlap}>
+        <Grid item xs={4}></Grid>
 
-            <Grid item xs={10} style={{marginBottom: 100}}>
+        <Grid item xs={7}>
             <p className={classes.paper}>
-              <Paper style={{padding: 10}}>
-                <h1>
-                  Title 2
-                </h1>
+              <Paper style={{padding: 10, marginBottom: 200}}>
+                
+                  Big Box 2
+                
                  <br></br>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                  One.
               </Paper>
             </p>
-
             </Grid>
-        </div>
+
+            <Grid item xs={1}>
+            <p className={classes.paper}></p>
+            </Grid>
+        
       </Grid>
     </div>
   );
