@@ -4,10 +4,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 
 const styles = {
   card: {
@@ -18,31 +16,31 @@ const styles = {
   }
 };
 
+let imgUrl = 'https://cdn.pixabay.com/photo/2016/08/27/11/16/mushrooms-1623893_960_720.jpg';
+
 function MediaCard(props) {
   const { classes } = props;
+
+  function showMushroom4(e) {
+    e.preventDefault();
+    console.log('The link was clicked');
+    
+}
+
+
+
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image={imgUrl}
+          title="Mushrooms"
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Mushrooms
-          </Typography>
-          <Typography component="p">
-            Mushrooms are a widespread group, with over 6,000 species, ranging
-            across all continents
-          </Typography>
-        </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
+        
+        <Button size="small" color="primary" onClick={showMushroom4}>
           Learn More
         </Button>
       </CardActions>

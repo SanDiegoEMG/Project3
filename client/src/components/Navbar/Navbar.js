@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import AuthService from '../AuthService';
+import '../Navbar/Navbar.css';
 
 // NEW PERSONALIZED NAVBAR ISAO-EDIT IMPORTS
 // import PropTypes from "prop-types";
@@ -17,8 +18,9 @@ import AuthService from '../AuthService';
 // import MenuItem from "@material-ui/core/MenuItem";
 // import Menu from "@material-ui/core/Menu";
 
-// // NEW CONST FOR PERSONALIZED NAVBAR ISAO-EDIT
-// const styles = {
+// NEW CONST FOR PERSONALIZED NAVBAR ISAO-EDIT
+// const styles = ({
+
 
 //     // MAKE IT STATIC AND IN FRONT OF EVERYTHING
 //     root:{
@@ -34,7 +36,7 @@ import AuthService from '../AuthService';
 //       // backgroundColor: "#b62519",
 //       // backgroundColor: "#7a5a40"
 //     },
-// }
+// })
 
 
 class Navbar extends Component {
@@ -84,7 +86,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav className="navbar navbar-expand-lg navbar-dark bg">
                 <div className="container">
                     <Link className="navbar-brand" to="/">You Me Mushrooms</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
