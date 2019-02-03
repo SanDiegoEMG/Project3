@@ -27,16 +27,6 @@ const styles = theme => ({
   }
 });
 
-// holding place for this code - will be moved to mushrooms pages ... delivers all species in an array of objects
-function showSpecies () {
-  API.getAllSpecies() 
-  .then(res => {console.log(res.data)})
-  .catch(err => console.log(err));
-}
-
-showSpecies()
-// end code to be moved to mushroom pages
-
 function CenteredGrid(props) {
   const { classes } = props;
 

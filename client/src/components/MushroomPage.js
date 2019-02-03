@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Ourmushroom from "../pages/Ourmushroom"
+import MushPage from "../pages/MushPage";
 import '../App';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     console.log(process.env.REACT_APP_SECRET_CODE);
     return (
       <div className="App">
-        <Ourmushroom></Ourmushroom>
+        <MushPage />
       </div>
     );
   }

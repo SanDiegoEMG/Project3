@@ -5,7 +5,7 @@ import MediaCard2 from "../components/Cards/Card2";
 import MediaCard3 from "../components/Cards/Card3";
 import MediaCard4 from "../components/Cards/Card4";
 import Grid from "@material-ui/core/Grid";
-import MushroomImageCard1 from "../components/MushroomGallery/Mushroom4Gallery";
+// import MushroomImageCard1 from "../components/MushroomGallery/Mushroom4Gallery";
 
 
 function Mushroom(props) {
@@ -30,7 +30,7 @@ function Mushroom(props) {
         
 
         <Grid item xs={4}></Grid>
-        <Grid item xs={6}><MushroomImageCard1></MushroomImageCard1></Grid>
+        {/* <Grid item xs={6}><MushroomImageCard1></MushroomImageCard1></Grid> */}
         <Grid item xs={2}></Grid>
         
         </Grid>
