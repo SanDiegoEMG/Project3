@@ -38,7 +38,9 @@ function MediaCard(props) {
           title= {props.pictitle}
         />
         <CardContent>
-          {showMushData}
+          <p>{props.name_common}</p>
+          {/* <p >{data.name_call}</p> */}
+          <p>{props.name_latin}</p>
           {/* <Typography gutterBottom variant="h5" component="h2">
             name_common
           </Typography>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ControlledExpansionPanels from "../components/Sidebar/Sidebar";
 import MainCard from "../components/MainCard/MainCard";
-import MediaCard from "../components/MushCard/MushCard";
+import MediaCard from "../components/MediaCard/MediaCard";
 import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
 import pinkMushroom from "../images/pink-oyster.jpg"
@@ -32,7 +32,7 @@ class MushPage extends Component {
     API.getAllSpecies()
       .then(res => {
         this.setState({ speciesArray: res.data});
-        console.log("res.data ", res.data)
+        console.log(this.state);
       })
       .catch(err => console.log(err));
   };
@@ -87,17 +87,21 @@ class MushPage extends Component {
             
               <Grid container spacing={8} style={{width:"100%"}} direcion="row" justify="center" alignItems="center">
 
-
+            
                   <Grid item xs={1}></Grid>
-                  <Grid item xs={2}>
+                  {this.state.speciesArray.map(item => (
+                    <Grid item xs={2}>
                     <MediaCard 
                     modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[0]} 
+                    name_common={item.name_common} 
+                    name_latin={item.name_latin}
                     picsrc = {lionsMane}
-                    pictitle = {"Lion's mane mushroom"}
+                    pictitle = {item.name_common}
                     />
                   </Grid>
-                  <Grid item xs={2}>
+                  ))}
+                  
+                  {/* <Grid item xs={2}>
                     <MediaCard 
                     modifiedCardSrc = {this.modifiedCardSrc}
                     showMushData={showMushData[1]} 
@@ -120,7 +124,7 @@ class MushPage extends Component {
                     picsrc = {kingOyster}
                     pictitle = {"king oyster mushrooms"}
                     />
-                  </Grid>
+                  </Grid> */}
 
                   <Grid item xs={3}></Grid>
                   <Grid item xs={6} style={{marginTop: 20}}>
