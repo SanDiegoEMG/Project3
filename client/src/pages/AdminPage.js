@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import DatePicker from '../components/DatePicker/DatePicker';
 import Table from '../components/Table/Table';
 import InputField from '../components/InputField/InputField';
+import Grid from "@material-ui/core/Grid";
 
 class AdminPage extends Component {
 
@@ -16,10 +17,15 @@ class AdminPage extends Component {
 
       {/* NEW HOME COMPONENT */}
         
+<<<<<<< HEAD
         
         
         
         
+=======
+        <Grid container spacing={24} style={{width:"100%"}}>
+
+>>>>>>> ed60cb0bff3f0292950662143ff2078213cf0cd7
         <DatePicker></DatePicker>
         
         <InputField></InputField>
@@ -28,7 +34,7 @@ class AdminPage extends Component {
         {/* <div className="App-header"> */}
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* </div> */}
-
+        </Grid>
       </div>
     );
   }

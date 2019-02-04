@@ -40,4 +40,4 @@ ContainedButtons.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ContainedButtons);
+export default withStyles(styles)(ContainedButtons); 
