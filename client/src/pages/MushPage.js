@@ -95,7 +95,7 @@ class MushPage extends Component {
                     modifiedCardSrc = {this.modifiedCardSrc}
                     name_common={item.name_common} 
                     name_latin={item.name_latin}
-                    picsrc = {lionsMane}
+                    picsrc = {item.imageUrl}
                     pictitle = {item.name_common}
                     />
                   </Grid>

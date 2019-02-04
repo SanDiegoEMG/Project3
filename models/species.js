@@ -18,6 +18,10 @@ const Schema = mongoose.Schema;
         },
         gestation: {
             type: String, 
+        },
+        imageUrl: {
+            type: String,
+            default: "https://via.placeholder.com/150"
         }
     });
     
