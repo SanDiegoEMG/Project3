@@ -15,11 +15,12 @@ const styles = {
     height: 140
   }
 };
+
 let imgUrl = 'https://cdn.pixabay.com/photo/2016/04/05/11/26/mushrooms-1309246_960_720.jpg';
 let MushroomTypeTitle = "Porcini Mushroom";
 
 function MediaCard(props) {
-    const { classes,modifyCardSrc } = props;
+    const { classes, modifyCardSrc } = props;
 
 
     return (

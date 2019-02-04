@@ -44,7 +44,7 @@ const styles = theme => ({
   }
 });
 
-class BottomAppBar extends Component {
+class Footer extends Component {
   state = {
     name: "",
     email: ""
@@ -96,8 +96,8 @@ class BottomAppBar extends Component {
   }
 }
 
-BottomAppBar.propTypes = {
+Footer.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(BottomAppBar);
+export default withStyles(styles)(Footer);

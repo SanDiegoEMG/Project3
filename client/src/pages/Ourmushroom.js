@@ -14,13 +14,16 @@ class Mushroom extends Component {
     state ={
       currentSrc:null,
       currentTitle: null
+
     }
 
   modifyCardSrc = (src, MushroomTypeTitle) => {
     this.setState({currentSrc:src});
     this.setState({currentTitle:MushroomTypeTitle});
   }
+
   // const { classes } = props;
+  
   render(){
   return (
     // <div className={classes.root}>
