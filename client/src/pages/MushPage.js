@@ -1,15 +1,10 @@
 import React, { Component } from "react";
 import ControlledExpansionPanels from "../components/Sidebar/Sidebar";
 import MainCard from "../components/MainCard/MainCard";
-import MediaCard from "../components/MushCard/MushCard";
+import MediaCard from "../components/MediaCard/MediaCard";
 import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
-import pinkMushroom from "../images/pink-oyster.jpg"
-import lionsMane from "../images/lions-mane.jpg"
-import pearlOyster from "../images/pearl-oyster.jpg"
-import kingOyster from "../images/king-oyster.jpg"
-import KingOyster from "../components/SpeciesDetails/KingOyster"
-// import Ourmushroom from "../components/Ourmushroom";
+
 
 class MushPage extends Component {
   
@@ -18,8 +13,7 @@ class MushPage extends Component {
     this.state = {
       speciesArray: [],
       click: true,
-      mainCardContent: "",
-      currentSrc: null
+      description: "Get more info by click on a mushroom"
   }
   };
 
@@ -32,14 +26,13 @@ class MushPage extends Component {
     API.getAllSpecies()
       .then(res => {
         this.setState({ speciesArray: res.data});
-        console.log("res.data ", res.data)
       })
       .catch(err => console.log(err));
   };
 
-  modifiedCardSrc = (src) => {
-    this.setState({currentSrc: src})
-  }
+  getMushroomInfo = (description) => {
+    this.setState({description: description});
+  };
 
 
   // PSEUDO CODE if there is nothing assigned to 'mainCardContent' state, show the 'landing' info in the mainCard - otherwise, show info associated with each mushroom from the components -> SpeciesDetails 
@@ -53,21 +46,6 @@ class MushPage extends Component {
 
 
   render() {
-
-    // VARIABLE DECLARATIONS GO BEFORE THE RETURN
-    // let test = this.state.click ? <div>Hello</div> : <div>Bye bye</div>;
-    // let test2 = this.state
-
-    // code from stackOverflow 
-    let showMushData = this.state.speciesArray.map(function(data, foo) {
-      return ([
-        <div key={foo}>
-          <p >{data.name_common}</p>
-          {/* <p >{data.name_call}</p> */}
-          <p >{data.name_latin}</p>
-        </div>
-      ]);
-   });
  
 
     return (
@@ -87,46 +65,26 @@ class MushPage extends Component {
             
               <Grid container spacing={8} style={{width:"100%"}} direcion="row" justify="center" alignItems="center">
 
-
+            
                   <Grid item xs={1}></Grid>
-                  <Grid item xs={2}>
+                  {this.state.speciesArray.map(item => (
+                    <Grid item xs={2} key={item._id}>
                     <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[0]} 
-                    picsrc = {lionsMane}
-                    pictitle = {"Lion's mane mushroom"}
+                      name_common={item.name_common} 
+                      name_latin={item.name_latin}
+                      picsrc = {item.imageUrl}
+                      description = {item.description}
+                      getMushroomInfo={this.getMushroomInfo}
                     />
                   </Grid>
-                  <Grid item xs={2}>
-                    <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[1]} 
-                    picsrc = {pearlOyster}
-                    pictitle = {"Pearl Oysters"}
-                    />
-                  </Grid>
-                  <Grid item xs={2}>
-                    <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[3]} 
-                    picsrc = {pinkMushroom}
-                    pictitle = {"pink oysters on white background"}
-                    />
-                  </Grid>
-                  <Grid item xs={2}>
-                    <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[3]} 
-                    picsrc = {kingOyster}
-                    pictitle = {"king oyster mushrooms"}
-                    />
-                  </Grid>
+                  ))}
 
                   <Grid item xs={3}></Grid>
                   <Grid item xs={6} style={{marginTop: 20}}>
-                    <MainCard
+                    <p>{this.state.description}</p>
+                    {/* <MainCard
                     src={this.state.currentSrc}
-                    ></MainCard>
+                    ></MainCard> */}
                   </Grid>
                   <Grid item xs={2}></Grid>
 
