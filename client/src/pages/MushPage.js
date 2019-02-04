@@ -18,13 +18,8 @@ class MushPage extends Component {
     this.state = {
       speciesArray: [],
       click: true,
-      mainCardContent: ""
-
-      //USED these to get dif info on the mush cards but was too limited
-      // speciesName0: "",
-      // speciesName1:"",
-      // speciesName2:"",
-      // speciesName3:""
+      mainCardContent: "",
+      currentSrc: null
   }
   };
 
@@ -38,19 +33,13 @@ class MushPage extends Component {
       .then(res => {
         this.setState({ speciesArray: res.data});
         console.log("res.data ", res.data)
-
-
-        // First way to get the mushroom cards to display different data - too limited
-        // this.setState({ speciesArray: res.data, speciesName0: res.data[0].name_common, speciesName1: res.data[1].name_common, speciesName2: res.data[2].name_common, speciesName3: res.data[3].name_common});
-        // console.log("res.data ", res.data)
-        // console.log("'state' of speciesArray", this.state.speciesArray);
-        // console.log("'state' of speciesName0", this.state.speciesName0);
-        // console.log("'state' of speciesName1", this.state.speciesName1);
-        // console.log("'state' of speciesName2", this.state.speciesName2);
-        // console.log("'state' of speciesName3", this.state.speciesName3);
       })
       .catch(err => console.log(err));
   };
+
+  modifiedCardSrc = (src) => {
+    this.setState({currentSrc: src})
+  }
 
 
   // PSEUDO CODE if there is nothing assigned to 'mainCardContent' state, show the 'landing' info in the mainCard - otherwise, show info associated with each mushroom from the components -> SpeciesDetails 
@@ -91,11 +80,11 @@ class MushPage extends Component {
         <Grid item xs={1}></Grid>
         <Grid item xs={2}
           onClick={(event) => { 
-            event.preventDefault() 
             console.log("lion's mane")
             // this.setState({ mainCardContent: {lionsmane} })
           }}
         ><MediaCard 
+          modifiedCardSrc = {this.modifiedCardSrc}
           showMushData={showMushData[0]} 
           picsrc = {lionsMane}
           pictitle = {"Lion's mane mushroom"}
@@ -104,8 +93,7 @@ class MushPage extends Component {
 
         <Grid item xs={1}></Grid>
         <Grid item xs={2}
-          onClick={(event) => { 
-            event.preventDefault() 
+          onClick={() => { 
             console.log("pearl oyster")
             // this.setState({ mainCardContent: {pearloyster} })
           }}
@@ -118,8 +106,7 @@ class MushPage extends Component {
 
         <Grid item xs={1}></Grid>
         <Grid item xs={2}
-          onClick={(event) => { 
-            event.preventDefault() 
+          onClick={() => { 
             console.log("pink oyster")
             // this.setState({ mainCardContent: {pinkoyster} })
 
@@ -133,8 +120,7 @@ class MushPage extends Component {
 
         <Grid item xs={1}></Grid>
         <Grid item xs={2}
-          onClick={(event) => { 
-            event.preventDefault() 
+          onClick={() => { 
             console.log("king oyster")
             this.setState({ mainCardContent: {KingOyster} })
           }}
@@ -149,7 +135,9 @@ class MushPage extends Component {
             <ControlledExpansionPanels /> </Grid>
           <Grid item xs={8} > 
           
-          <MainCard><KingOyster/></MainCard>
+          <MainCard
+          src={this.state.currentSrc}
+          ></MainCard>
           {/* // stateTextTest = {test} />  */}
           </Grid>
         </Grid>
@@ -158,9 +146,6 @@ class MushPage extends Component {
       );
     }
   };
-
-
-
 
   export default MushPage;
 
