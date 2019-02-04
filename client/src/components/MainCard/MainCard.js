@@ -66,7 +66,7 @@ class MainCard extends React.Component {
     console.log("this is props ", this.props)
 
     return (
-      <Grid item xs={6}>
+      <Grid item xs={8} justify="center" alignItems="center">
         <Card className={classes.card}>
           <CardHeader
             avatar={
@@ -88,10 +88,10 @@ class MainCard extends React.Component {
           />
           <CardContent>
             <Typography component="p">
-              <p>Want this whole section display</p>
-              <p>To Change from Landing Text</p>
-              <p>{this.props.stateTextTest}</p>
-              <p>and Display different info depending on which mushroom card above is clicked</p>
+              Want this whole section display
+              To Change from Landing Text
+              {this.props.stateTextTest}
+              and Display different info depending on which mushroom card above is clicked
             </Typography>
           </CardContent>
         </Card>
