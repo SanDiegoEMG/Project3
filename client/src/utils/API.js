@@ -8,14 +8,27 @@ export default {
   signUpUser: (username, email, password) => {
     return axios.post('api/signup', {username: username, email: email, password: password});
   },
-  // get all mushroom species data as array of objects
+  // get all species documents as array of objects
   getAllSpecies: () => {
     return axios.get(`/api/species`);
   },
 
-  // get data info associeated with one mushroom species
-  getOneSpecies: () => {
-    return axios.get(`/api/species/:id`);
+  // get data associated with one mushroom species
+  getOneSpecies: (id) => {
+    return axios.get(`/api/species/${id}`);
   },
 
+  deleteOneSpecies: (id) => {
+    return axios.delete(`/api/species/${id}`)
+  },
+
+  // get all batch documents as array of objects
+  getAllBatch: () => {
+    return axios.get(`/api/batch`);
+  },
+
+  // start a new batch document (use on Admin page)
+  startBatch: (batchNum, bagNum, species, bagSize) => {
+    return axios.post('api/batch', {batchNum: batchNum, bagNum: bagNum, species: species, bagSize: bagSize}); 
+  }
 };

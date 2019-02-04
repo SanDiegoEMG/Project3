@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AuthService from './AuthService';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 class Login extends Component {
   constructor() {
@@ -60,7 +60,7 @@ class Login extends Component {
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
-        <p><Link to="/signup">Go to Signup</Link></p>
+        {/* <p><Link to="/signup">Go to Signup</Link></p> */}
       </div>
 
     );

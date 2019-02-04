@@ -1,51 +1,60 @@
+
+
+
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
+// import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+// import Button from "@material-ui/core/Button";
+// import Typography from "@material-ui/core/Typography";
 
 const styles = {
   card: {
     maxWidth: 345
   },
   media: {
-    height: 140
+    height: 140,
   }
 };
 
+let imgUrl = 'https://cdn.pixabay.com/photo/2016/08/27/11/16/mushrooms-1623893_960_720.jpg';
+let MushroomTypeTitle = 'Maitake Mushroom';
+
 function MediaCard(props) {
   const { classes } = props;
+  const { showMushData } = props;
+  console.log("Awww props: ", props)
+  console.log("showMushData is ", showMushData)
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image= {props.picsrc}
+          title= {props.pictitle}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Mushrooms
+          {showMushData}
+          {/* <Typography gutterBottom variant="h5" component="h2">
+            name_common
           </Typography>
           <Typography component="p">
-            Mushrooms are a widespread group, with over 6,000 species, ranging
-            across all continents
-          </Typography>
+            name_latin
+          </Typography> */}
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small" color="primary">
           Share
         </Button>
         <Button size="small" color="primary">
           Learn More
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }

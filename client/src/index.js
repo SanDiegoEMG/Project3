@@ -14,8 +14,8 @@ import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import SpeciesCalendar from './components/SpeciesCalendar';
-import MushroomPage from './components/MushroomPage';
-import PageAdmin from './pages/AdminPage';
+import AdminPage from './pages/AdminPage';
+import MushPage from './pages/MushPage';
 
 
 // Here is if we have an id_token in localStorage
@@ -30,11 +30,11 @@ ReactDOM.render(
             <Navbar />
             <Route exact path="/" component={App} />
             <Route exact path="/speciescalendar" component={SpeciesCalendar} />
-            <Route exact path="/adminpage" component={PageAdmin} />
+            <Route exact path="/adminpage" component={AdminPage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/ourmushrooms" component={MushroomPage} />
+            <Route exact path="/mushpage" component={MushPage} />
         </div>
     </Router>
     , document.getElementById('root')

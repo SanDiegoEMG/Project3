@@ -63,7 +63,7 @@ class OutlinedInputAdornments extends React.Component {
     return (
       <div className={classes.root}>
 
-      <Grid container spacing={22}>
+      <Grid container spacing={24}>
       <Grid item xs={1}></Grid>
       <Grid item xs={8}>
         <TextField

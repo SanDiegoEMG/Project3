@@ -5,12 +5,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Grid from "@material-ui/core/Grid";
+// import Grid from "@material-ui/core/Grid";
 
 
 const styles = theme => ({
     root:{
-        marginTop: 40
+        marginTop: 60,
+        marginLeft: 30
     },
   container: {
     display: 'flex',
@@ -19,7 +20,7 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200,
+    // width: 1500,
   },
 });
 
@@ -28,11 +29,7 @@ function DatePickers(props) {
 
   return (
     <div className={classes.root}>
-        <Grid container spacing={22}>
-
-            <Grid item xs={1}>
-            </Grid>
-            <Grid item xs={3}>
+        
             <form className={classes.container} noValidate>
             <TextField
                 id="date"
@@ -45,8 +42,8 @@ function DatePickers(props) {
                 }}
             />
             </form>
-            </Grid>
-        </Grid>
+         
+        
     </div>
   );
 }

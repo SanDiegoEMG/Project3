@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import AuthService from '../AuthService';
+import '../Navbar/Navbar.css';
 
 // NEW PERSONALIZED NAVBAR ISAO-EDIT IMPORTS
 // import PropTypes from "prop-types";
@@ -17,8 +18,9 @@ import AuthService from '../AuthService';
 // import MenuItem from "@material-ui/core/MenuItem";
 // import Menu from "@material-ui/core/Menu";
 
-// // NEW CONST FOR PERSONALIZED NAVBAR ISAO-EDIT
-// const styles = {
+// NEW CONST FOR PERSONALIZED NAVBAR ISAO-EDIT
+// const styles = ({
+
 
 //     // MAKE IT STATIC AND IN FRONT OF EVERYTHING
 //     root:{
@@ -34,7 +36,7 @@ import AuthService from '../AuthService';
 //       // backgroundColor: "#b62519",
 //       // backgroundColor: "#7a5a40"
 //     },
-// }
+// })
 
 
 class Navbar extends Component {
@@ -55,27 +57,33 @@ class Navbar extends Component {
                         <a className="nav-link" href="/" onClick={() => this.Auth.logout()}>Logout</a>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/ourmushrooms">Our Mushrooms</Link>
+                        <Link className="nav-link" to="/mushpage">Our Mushrooms</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/speciescalendar">Calendar</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/">Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/adminpage">Admin</Link>
                     </li>
                 </ul>
             );
         } else {
             return (
                 <ul className="navbar-nav">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link className="nav-link" to="/signup">Signup</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link className="nav-link" to="/login">Login</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/speciescalendar">Calendar</Link>
+                        <Link className="nav-link" to="/mushpage">Our Mushrooms</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/ourmushrooms">Our Mushrooms</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/adminpage">Admin</Link>
+                        <Link className="nav-link" to="/">Home</Link>
                     </li>
                 </ul>
             );
@@ -84,7 +92,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav className="navbar navbar-expand-lg navbar-dark bg">
                 <div className="container">
                     <Link className="navbar-brand" to="/">You Me Mushrooms</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,3 +110,8 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
+
+
+
+
