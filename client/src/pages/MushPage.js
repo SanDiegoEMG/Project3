@@ -53,21 +53,6 @@ class MushPage extends Component {
 
 
   render() {
-
-    // VARIABLE DECLARATIONS GO BEFORE THE RETURN
-    // let test = this.state.click ? <div>Hello</div> : <div>Bye bye</div>;
-    // let test2 = this.state
-
-    // code from stackOverflow 
-    let showMushData = this.state.speciesArray.map(function(data, foo) {
-      return ([
-        <div key={foo}>
-          <p >{data.name_common}</p>
-          {/* <p >{data.name_call}</p> */}
-          <p >{data.name_latin}</p>
-        </div>
-      ]);
-   });
  
 
     return (
@@ -92,39 +77,12 @@ class MushPage extends Component {
                   {this.state.speciesArray.map(item => (
                     <Grid item xs={2}>
                     <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    name_common={item.name_common} 
-                    name_latin={item.name_latin}
-                    picsrc = {item.imageUrl}
-                    pictitle = {item.name_common}
+                      name_common={item.name_common} 
+                      name_latin={item.name_latin}
+                      picsrc = {item.imageUrl}
                     />
                   </Grid>
                   ))}
-                  
-                  {/* <Grid item xs={2}>
-                    <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[1]} 
-                    picsrc = {pearlOyster}
-                    pictitle = {"Pearl Oysters"}
-                    />
-                  </Grid>
-                  <Grid item xs={2}>
-                    <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[3]} 
-                    picsrc = {pinkMushroom}
-                    pictitle = {"pink oysters on white background"}
-                    />
-                  </Grid>
-                  <Grid item xs={2}>
-                    <MediaCard 
-                    modifiedCardSrc = {this.modifiedCardSrc}
-                    showMushData={showMushData[3]} 
-                    picsrc = {kingOyster}
-                    pictitle = {"king oyster mushrooms"}
-                    />
-                  </Grid> */}
 
                   <Grid item xs={3}></Grid>
                   <Grid item xs={6} style={{marginTop: 20}}>
