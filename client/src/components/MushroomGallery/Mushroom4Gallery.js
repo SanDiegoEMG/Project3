@@ -17,8 +17,6 @@ import red from '@material-ui/core/colors/red';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-// TRYING TO IMPORT THE NEW IMAGE LINK
-// import newImageLink from '../Cards/Card3';
 
 
 const styles = theme => ({
@@ -54,15 +52,6 @@ class MushroomImageCard extends Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
-
-    // TRYING TO DETECT CLICK ON CARD COMPONENT AND CHANGE imageLink's VALUE
-
-    //   onChangeImageLink(newImageLink) {
-    //     console.log("I need to know a card has been clicked")
-    //       this.setState({
-    //           imageLink: <newImageLink />
-    //       });
-    //   }
 
   render() {
     const { classes, src, titleOfMush } = this.props;
