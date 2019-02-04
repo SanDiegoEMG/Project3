@@ -6,6 +6,15 @@ import MediaCard3 from "../components/Cards/Card3";
 import MediaCard4 from "../components/Cards/Card4";
 import Grid from "@material-ui/core/Grid";
 import MushroomImageCard1 from "../components/MushroomGallery/Mushroom4Gallery";
+import API from "../utils/API";
+
+function showSpecies () {
+  API.getAllSpecies() 
+  .then(res => {console.log(res.data)})
+  .catch(err => console.log(err));
+}
+
+showSpecies()
 
 
 function Mushroom(props) {
