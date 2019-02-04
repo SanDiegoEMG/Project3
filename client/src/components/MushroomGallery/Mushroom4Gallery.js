@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 // import classnames from 'classnames';
@@ -47,13 +47,7 @@ const styles = theme => ({
   },
 });
 
-class MushroomImageCard extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            imageLink: "https://cdn.pixabay.com/photo/2018/03/04/23/03/mushrooms-3199517_960_720.jpg"
-        }
-    }
+class MushroomImageCard extends Component {
 
   state = { expanded: false };
 
@@ -71,9 +65,9 @@ class MushroomImageCard extends React.Component {
     //   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, src, titleOfMush } = this.props;
 
-    return (
+    return src && (
       <Card className={classes.card}>
         <CardHeader
           action={
@@ -81,15 +75,13 @@ class MushroomImageCard extends React.Component {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Porcini Mushroom"
-          subheader="September 14, 2016"
+          title={titleOfMush}
         />
         <CardMedia
           className={classes.media}
           
           // THIS SHOULD CHANGE WITH onChangeImageLink
-          image={this.state.imageLink}
-          title="Porcini"
+          image={src}
         />
         
       </Card>

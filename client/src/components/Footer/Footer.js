@@ -2,7 +2,8 @@ import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-import CssBaseline from "@material-ui/core/CssBaseline";
+// this CSSBaseline breaks my style no pun intended - Isao
+// import CssBaseline from "@material-ui/core/CssBaseline";
 import FilledTextFields from "../Footer/TxtFields";
 import ContainedButtons from "../Footer/Button";
 
@@ -56,8 +57,8 @@ class BottomAppBar extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Fragment>
-        <CssBaseline />
+      <Fragment style={{width: '100%'}}>
+        {/* <CssBaseline /> */}
         <AppBar position="fixed" color="primary" className={classes.appBar}>
           <div className={classes.stayInfo}>
             <p>Stay informed as we grow and harvest ...</p>

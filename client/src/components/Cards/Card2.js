@@ -1,107 +1,49 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-// import classnames from 'classnames';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-// import CardContent from '@material-ui/core/CardContent';
-// import CardActions from '@material-ui/core/CardActions';
-// import Collapse from '@material-ui/core/Collapse';
-// import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-// import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
-// import FavoriteIcon from '@material-ui/icons/Favorite';
-// import ShareIcon from '@material-ui/icons/Share';
-// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
 
-// TRYING TO IMPORT THE NEW IMAGE LINK
-// import newImageLink from '../Cards/Card3';
-
-
-const styles = theme => ({
+const styles = {
   card: {
-    maxWidth: 400,
+    maxWidth: 345
   },
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  actions: {
-    display: 'flex',
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-});
+    height: 140
+  }
+};
+let imgUrl = 'https://cdn.pixabay.com/photo/2016/04/05/11/26/mushrooms-1309246_960_720.jpg';
+let MushroomTypeTitle = "Porcini Mushroom";
 
-class MushroomImageCard extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            imageLink: "https://cdn.pixabay.com/photo/2018/03/04/23/03/mushrooms-3199517_960_720.jpg"
-        }
-    }
+function MediaCard(props) {
+    const { classes,modifyCardSrc } = props;
 
-  state = { expanded: false };
-
-  handleExpandClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }));
-  };
-
-    // TRYING TO DETECT CLICK ON CARD COMPONENT AND CHANGE imageLink's VALUE
-
-    //   onChangeImageLink(newImageLink) {
-    //     console.log("I need to know a card has been clicked")
-    //       this.setState({
-    //           imageLink: <newImageLink />
-    //       });
-    //   }
-
-  render() {
-    const { classes } = this.props;
 
     return (
       <Card className={classes.card}>
-        <CardHeader
-          action={
-            <IconButton>
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="Porcini Mushroom"
-          subheader="September 14, 2016"
-        />
-        <CardMedia
-          className={classes.media}
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={imgUrl}
+            title="Mushrooms"
+          />
+        </CardActionArea>
+        <CardActions>
           
-          // THIS SHOULD CHANGE WITH onChangeImageLink
-          image={this.state.imageLink}
-          title="Porcini"
-        />
-        
+          <Button size="small" color="primary" onClick={()=>modifyCardSrc(imgUrl, MushroomTypeTitle)}>
+            Porcini
+          </Button>
+        </CardActions>
       </Card>
     );
   }
-}
-
-MushroomImageCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(MushroomImageCard);
-
-
-
+  
+  MediaCard.propTypes = {
+    classes: PropTypes.object.isRequired
+  };
+  
+  export default withStyles(styles)(MediaCard);
+  
