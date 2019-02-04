@@ -74,73 +74,73 @@ class MushPage extends Component {
 
       <div className="Mushroompage">
 
-        <Grid container spacing={24}>
+      <Grid container spacing={16} style={{width: '100%', backgroundColor:"FEF2E4"}}>
+      
+        <Grid container spacing={24} style={{width: '100%', marginTop: 100}}>
+
           
-
-        <Grid item xs={1}></Grid>
-        <Grid item xs={2}
-          onClick={(event) => { 
-            console.log("lion's mane")
-            // this.setState({ mainCardContent: {lionsmane} })
-          }}
-        ><MediaCard 
-          modifiedCardSrc = {this.modifiedCardSrc}
-          showMushData={showMushData[0]} 
-          picsrc = {lionsMane}
-          pictitle = {"Lion's mane mushroom"}
-        /></Grid>
-
-
-        <Grid item xs={1}></Grid>
-        <Grid item xs={2}
-          onClick={() => { 
-            console.log("pearl oyster")
-            // this.setState({ mainCardContent: {pearloyster} })
-          }}
-        ><MediaCard 
-          showMushData={showMushData[1]}
-          picsrc = {pearlOyster}
-          pictitle = { "Pearl Oysters"}
-          /> </Grid>
-
-
-        <Grid item xs={1}></Grid>
-        <Grid item xs={2}
-          onClick={() => { 
-            console.log("pink oyster")
-            // this.setState({ mainCardContent: {pinkoyster} })
-
-          }}
-        ><MediaCard 
-          showMushData = { showMushData[2] }
-          picsrc = {pinkMushroom}
-          pictitle = "pink oysters on white background"
-          /> </Grid>
-
-
-        <Grid item xs={1}></Grid>
-        <Grid item xs={2}
-          onClick={() => { 
-            console.log("king oyster")
-            this.setState({ mainCardContent: {KingOyster} })
-          }}
-        ><MediaCard 
-          showMushData={ showMushData[3] }  
-          picsrc = {kingOyster}
-          pictitle = "king oyster mushrooms"
-          /></Grid>
-
-
-        <Grid item xs={3} style={{marginTop: 100}}>
-            <ControlledExpansionPanels /> </Grid>
-          <Grid item xs={8} > 
-          
-          <MainCard
-          src={this.state.currentSrc}
-          ></MainCard>
-          {/* // stateTextTest = {test} />  */}
+          <Grid item xs={3} style={{marginTop: 100}}>
+          {/* here goes sidebar */}
           </Grid>
+
+          <Grid item xs={9} style={{width:"100%"}}>
+            
+              <Grid container spacing={8} style={{width:"100%"}} direcion="row" justify="center" alignItems="center">
+
+
+                  <Grid item xs={1}></Grid>
+                  <Grid item xs={2}>
+                    <MediaCard 
+                    modifiedCardSrc = {this.modifiedCardSrc}
+                    showMushData={showMushData[0]} 
+                    picsrc = {lionsMane}
+                    pictitle = {"Lion's mane mushroom"}
+                    />
+                  </Grid>
+                  <Grid item xs={2}>
+                    <MediaCard 
+                    modifiedCardSrc = {this.modifiedCardSrc}
+                    showMushData={showMushData[1]} 
+                    picsrc = {pearlOyster}
+                    pictitle = {"Pearl Oysters"}
+                    />
+                  </Grid>
+                  <Grid item xs={2}>
+                    <MediaCard 
+                    modifiedCardSrc = {this.modifiedCardSrc}
+                    showMushData={showMushData[3]} 
+                    picsrc = {pinkMushroom}
+                    pictitle = {"pink oysters on white background"}
+                    />
+                  </Grid>
+                  <Grid item xs={2}>
+                    <MediaCard 
+                    modifiedCardSrc = {this.modifiedCardSrc}
+                    showMushData={showMushData[3]} 
+                    picsrc = {kingOyster}
+                    pictitle = {"king oyster mushrooms"}
+                    />
+                  </Grid>
+
+                  <Grid item xs={3}></Grid>
+                  <Grid item xs={6} style={{marginTop: 20}}>
+                    <MainCard
+                    src={this.state.currentSrc}
+                    ></MainCard>
+                  </Grid>
+                  <Grid item xs={2}></Grid>
+
+              </Grid>
+          
+          
+          </Grid>
+
+
         </Grid>
+      
+      </Grid>
+
+
 
       </div>
       );
