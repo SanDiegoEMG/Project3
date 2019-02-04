@@ -1,6 +1,7 @@
 .navbar{
-    position: fixed;
     width: 100%;
     background-color: #C60000;
     color: #ffc1c1;
+    margin-bottom: 50px;
+    /* position: fixed; */
 }
