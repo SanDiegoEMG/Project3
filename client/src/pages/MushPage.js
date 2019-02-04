@@ -4,12 +4,7 @@ import MainCard from "../components/MainCard/MainCard";
 import MediaCard from "../components/MediaCard/MediaCard";
 import Grid from "@material-ui/core/Grid";
 import API from "../utils/API";
-import pinkMushroom from "../images/pink-oyster.jpg"
-import lionsMane from "../images/lions-mane.jpg"
-import pearlOyster from "../images/pearl-oyster.jpg"
-import kingOyster from "../images/king-oyster.jpg"
-import KingOyster from "../components/SpeciesDetails/KingOyster"
-// import Ourmushroom from "../components/Ourmushroom";
+
 
 class MushPage extends Component {
   
@@ -18,8 +13,7 @@ class MushPage extends Component {
     this.state = {
       speciesArray: [],
       click: true,
-      mainCardContent: "",
-      currentSrc: null
+      description: "Get more info by click on a mushroom"
   }
   };
 
@@ -32,14 +26,13 @@ class MushPage extends Component {
     API.getAllSpecies()
       .then(res => {
         this.setState({ speciesArray: res.data});
-        console.log(this.state);
       })
       .catch(err => console.log(err));
   };
 
-  modifiedCardSrc = (src) => {
-    this.setState({currentSrc: src})
-  }
+  getMushroomInfo = (description) => {
+    this.setState({description: description});
+  };
 
 
   // PSEUDO CODE if there is nothing assigned to 'mainCardContent' state, show the 'landing' info in the mainCard - otherwise, show info associated with each mushroom from the components -> SpeciesDetails 
@@ -75,20 +68,23 @@ class MushPage extends Component {
             
                   <Grid item xs={1}></Grid>
                   {this.state.speciesArray.map(item => (
-                    <Grid item xs={2}>
+                    <Grid item xs={2} key={item._id}>
                     <MediaCard 
                       name_common={item.name_common} 
                       name_latin={item.name_latin}
                       picsrc = {item.imageUrl}
+                      description = {item.description}
+                      getMushroomInfo={this.getMushroomInfo}
                     />
                   </Grid>
                   ))}
 
                   <Grid item xs={3}></Grid>
                   <Grid item xs={6} style={{marginTop: 20}}>
-                    <MainCard
+                    <p>{this.state.description}</p>
+                    {/* <MainCard
                     src={this.state.currentSrc}
-                    ></MainCard>
+                    ></MainCard> */}
                   </Grid>
                   <Grid item xs={2}></Grid>
 

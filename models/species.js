@@ -22,6 +22,10 @@ const Schema = mongoose.Schema;
         imageUrl: {
             type: String,
             default: "https://via.placeholder.com/150"
+        },
+        description: {
+            type: String,
+            required: true
         }
     });
     
