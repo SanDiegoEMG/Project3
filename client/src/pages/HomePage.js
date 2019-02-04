@@ -3,12 +3,9 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-<<<<<<< HEAD
-=======
 // import API from "../utils/API"
 import './HomeStyle.css';
 
->>>>>>> ed60cb0bff3f0292950662143ff2078213cf0cd7
 
 let imgUrl = 'https://travelblond.files.wordpress.com/2015/11/gaslamp-quarter.jpg';
 const styles = theme => ({

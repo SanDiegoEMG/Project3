@@ -17,15 +17,8 @@ class AdminPage extends Component {
 
       {/* NEW HOME COMPONENT */}
         
-<<<<<<< HEAD
-        
-        
-        
-        
-=======
         <Grid container spacing={24} style={{width:"100%"}}>
 
->>>>>>> ed60cb0bff3f0292950662143ff2078213cf0cd7
         <DatePicker></DatePicker>
         
         <InputField></InputField>

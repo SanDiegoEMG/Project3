@@ -29,15 +29,7 @@ function DatePickers(props) {
 
   return (
     <div className={classes.root}>
-<<<<<<< HEAD
-        <Grid container spacing={24}>
-
-            <Grid item xs={1}>
-            </Grid>
-            <Grid item xs={3}>
-=======
         
->>>>>>> ed60cb0bff3f0292950662143ff2078213cf0cd7
             <form className={classes.container} noValidate>
             <TextField
                 id="date"
