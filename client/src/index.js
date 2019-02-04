@@ -14,7 +14,7 @@ import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import SpeciesCalendar from './components/SpeciesCalendar';
-import PageAdmin from './pages/AdminPage';
+import AdminPage from './pages/AdminPage';
 import MushPage from './pages/MushPage';
 
 
@@ -30,11 +30,11 @@ ReactDOM.render(
             <Navbar />
             <Route exact path="/" component={App} />
             <Route exact path="/speciescalendar" component={SpeciesCalendar} />
-            <Route exact path="/adminpage" component={PageAdmin} />
+            <Route exact path="/adminpage" component={AdminPage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/ourmushrooms" component={MushPage} />
+            <Route exact path="/mushpage" component={MushPage} />
         </div>
     </Router>
     , document.getElementById('root')

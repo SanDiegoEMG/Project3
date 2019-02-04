@@ -17,6 +17,8 @@ import red from "@material-ui/core/colors/red";
 // import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Grid from "@material-ui/core/Grid";
+import mushMarket from "../../images/mush-market.jpg"
+
 
 
 const styles = theme => ({
@@ -51,7 +53,7 @@ const styles = theme => ({
   }
 });
 
-class RecipeReviewCard extends React.Component {
+class MainCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -60,6 +62,8 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
+    // const { showMushData } = this.props;
+    console.log("this is props ", this.props)
 
     return (
       <Grid item xs={6}>
@@ -79,13 +83,14 @@ class RecipeReviewCard extends React.Component {
           />
           <CardMedia
             className={classes.media}
-            image="assets/images/mush-image.jpg"
+            image= { mushMarket }
             title="Mushroom"
           />
           <CardContent>
             <Typography component="p">
               <p>Want this whole section display</p>
               <p>To Change from Landing Text</p>
+              <p>{this.props.stateTextTest}</p>
               <p>and Display different info depending on which mushroom card above is clicked</p>
             </Typography>
           </CardContent>
@@ -95,8 +100,8 @@ class RecipeReviewCard extends React.Component {
   }
 }
 
-RecipeReviewCard.propTypes = {
+MainCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(RecipeReviewCard);
+export default withStyles(styles)(MainCard);

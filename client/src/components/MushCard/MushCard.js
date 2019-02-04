@@ -7,7 +7,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 // import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 
 const styles = {
   card: {
@@ -20,22 +20,25 @@ const styles = {
 
 function MediaCard(props) {
   const { classes } = props;
+  const { showMushData } = props;
   console.log("Awww props: ", props)
+  console.log("showMushData is ", showMushData)
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="../assets/images/mush-image.jpg"
-          title="Button Mushroom"
+          image= {props.picsrc}
+          title= {props.pictitle}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Mushrooms
+          {showMushData}
+          {/* <Typography gutterBottom variant="h5" component="h2">
+            name_common
           </Typography>
           <Typography component="p">
-            Species Name here
-          </Typography>
+            name_latin
+          </Typography> */}
         </CardContent>
       </CardActionArea>
       {/* <CardActions>

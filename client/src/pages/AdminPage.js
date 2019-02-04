@@ -4,13 +4,20 @@ import DatePicker from '../components/DatePicker/DatePicker';
 import Table from '../components/Table/Table';
 import InputField from '../components/InputField/InputField';
 
-class App extends Component {
+class AdminPage extends Component {
 
   render() {
     console.log(process.env.REACT_APP_SECRET_CODE);
+
+
     return (
-      <div className="App">
+      <div>
+
+
       {/* NEW HOME COMPONENT */}
+        
+        
+        
         
         
         <DatePicker></DatePicker>
@@ -27,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default AdminPage;

@@ -103,7 +103,19 @@ const speciesSeed = [
       name_call: "pearl",
       gestation: 20
   },
-  // {
+  {
+      name_latin: "Pleurotus djamor",
+      name_common: "Pink Oyster",
+      name_call: "pink",
+      gestation: 15
+  },
+  {
+      name_latin: "Pleurotus eringyi",
+      name_common: "King Oyster",
+      name_call: "king",
+      gestation: 20
+  },
+    // {
   //     name_latin: "Pleurotus pulmonarius",
   //     name_common: "Italian Oyster / Phoenix Mushroom",
   //     name_call: "phoenix",
@@ -121,24 +133,12 @@ const speciesSeed = [
   //     name_call: "golden",
   //     gestation: 12
   // },
-  {
-      name_latin: "Pleurotus djamor",
-      name_common: "Pink Oyster",
-      name_call: "pink",
-      gestation: 15
-  },
-  // {
+    // {
   //     name_latin: "Pholiota adiposa",
   //     name_common: "Chestnut",
   //     name_call: "chestnut",
   //     gestation: 22
   // },
-  {
-      name_latin: "Pleurotus eringyi",
-      name_common: "Royal Trumpet / King Oyster",
-      name_call: "trumpet",
-      gestation: 20
-  },
 ];
 
 db.Species

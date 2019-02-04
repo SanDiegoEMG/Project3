@@ -55,27 +55,33 @@ class Navbar extends Component {
                         <a className="nav-link" href="/" onClick={() => this.Auth.logout()}>Logout</a>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/ourmushrooms">Our Mushrooms</Link>
+                        <Link className="nav-link" to="/mushpage">Our Mushrooms</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/speciescalendar">Calendar</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/">Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/adminpage">Admin</Link>
                     </li>
                 </ul>
             );
         } else {
             return (
                 <ul className="navbar-nav">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link className="nav-link" to="/signup">Signup</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link className="nav-link" to="/login">Login</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/speciescalendar">Calendar</Link>
+                        <Link className="nav-link" to="/mushpage">Our Mushrooms</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/ourmushrooms">Our Mushrooms</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/adminpage">Admin</Link>
+                        <Link className="nav-link" to="/">Home</Link>
                     </li>
                 </ul>
             );
