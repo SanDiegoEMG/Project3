@@ -72,7 +72,7 @@ class MushroomImageCard extends Component {
         <CardHeader
           action={
             <IconButton>
-              <MoreVertIcon />
+              <MoreVertIcon  />
             </IconButton>
           }
           title={titleOfMush}

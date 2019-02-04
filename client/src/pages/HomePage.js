@@ -14,7 +14,7 @@ const styles = theme => ({
     textAlign: "center",
     backgroundColor: "none",
     color: "4e4a4a",
-    fontFamily: "serif",
+    fontFamily: "Chelsea Market",
     fontSize: "larger",
     fontWeight: 525,
   },
@@ -29,14 +29,14 @@ const styles = theme => ({
     height: 500
   },
   headline: {
-    fontFamily: "san-serif",
+    fontFamily: "Chelsea Market",
     fontSize: "x-large",
     fontWeight: 600,
     marginBottom: 0,
     color: "#000000"
   },
   headline2: {
-    fontFamily: "san-serif",
+    fontFamily: "Chelsea Market",
     fontSize: "23px",
     fontWeight: 600,
     marginBottom: 0,
@@ -64,7 +64,7 @@ function CenteredGrid(props) {
                 Welcome to You Me Mushrooms!
               </p>
               <hr></hr>
-              Growing and harvesting specialty gourmet and medicinal mushrooms for San Diego restaurants, and neighborhood markets, and community members.
+              Growing and harvesting specialty gourmet, medicinal mushrooms for San Diego restaurants, neighborhood markets, and community members.
           </Paper>
           </p>
         </Grid>
