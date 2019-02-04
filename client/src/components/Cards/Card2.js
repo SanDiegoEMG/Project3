@@ -16,7 +16,7 @@ const styles = {
   }
 };
 let imgUrl = 'https://cdn.pixabay.com/photo/2016/04/05/11/26/mushrooms-1309246_960_720.jpg';
-let MushroomTypeTitle = "Type Two of Mushroom";
+let MushroomTypeTitle = "Porcini Mushroom";
 
 function MediaCard(props) {
     const { classes,modifyCardSrc } = props;
@@ -34,7 +34,7 @@ function MediaCard(props) {
         <CardActions>
           
           <Button size="small" color="primary" onClick={()=>modifyCardSrc(imgUrl, MushroomTypeTitle)}>
-            Learn More
+            Porcini
           </Button>
         </CardActions>
       </Card>

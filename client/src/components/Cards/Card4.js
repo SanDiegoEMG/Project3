@@ -18,7 +18,7 @@ const styles = {
 };
 
 let imgUrl = 'https://cdn.pixabay.com/photo/2018/03/04/23/03/mushrooms-3199517_960_720.jpg';
-let MushroomTypeTitle = 'Type Four Of Mushroom';
+let MushroomTypeTitle = 'Portabello Mushroom';
 
 function MediaCard(props) {
     const { classes, modifyCardSrc } = props;
@@ -36,7 +36,7 @@ function MediaCard(props) {
         <CardActions>
           
           <Button size="small" color="primary" onClick={() => modifyCardSrc(imgUrl, MushroomTypeTitle)}>
-            Learn More
+            Portabello
           </Button>
         </CardActions>
       </Card>

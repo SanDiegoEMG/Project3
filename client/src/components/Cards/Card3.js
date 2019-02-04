@@ -20,7 +20,7 @@ const styles = {
 
 
 let imgUrl = 'https://cdn.pixabay.com/photo/2014/07/10/20/55/mushroom-389421_960_720.jpg';
-let MushroomTypeTitle = 'Type Three Of Mushroom'
+let MushroomTypeTitle = 'Crimino Mushroom'
 
 
 function MediaCard(props) {
@@ -39,7 +39,7 @@ function MediaCard(props) {
         <CardActions>
           
           <Button size="small" color="primary" onClick={()=>modifyCardSrc(imgUrl, MushroomTypeTitle)}>
-            Learn More
+            Crimino
           </Button>
         </CardActions>
       </Card>

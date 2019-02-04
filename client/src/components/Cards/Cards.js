@@ -17,7 +17,7 @@ const styles = {
 };
 
 let imgUrl = 'https://cdn.pixabay.com/photo/2016/08/27/11/16/mushrooms-1623893_960_720.jpg';
-let MushroomTypeTitle = 'Type One Of Mushroom';
+let MushroomTypeTitle = 'Maitake Mushroom';
 
 function MediaCard(props) {
   const { classes, modifyCardSrc } = props;
@@ -35,7 +35,7 @@ function MediaCard(props) {
       <CardActions>
         
         <Button size="small" color="primary" onClick={() => modifyCardSrc(imgUrl, MushroomTypeTitle)}>
-          Learn More
+          Maitake
         </Button>
       </CardActions>
     </Card>
