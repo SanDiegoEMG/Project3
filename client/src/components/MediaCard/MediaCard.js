@@ -27,10 +27,8 @@ let MushroomTypeTitle = 'Maitake Mushroom';
 function MediaCard(props) {
   const { classes } = props;
   const { showMushData } = props;
-  console.log("Awww props: ", props)
-  console.log("showMushData is ", showMushData)
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} onClick={() => props.getMushroomInfo(props.description)}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -38,7 +36,9 @@ function MediaCard(props) {
           title= {props.pictitle}
         />
         <CardContent>
-          {showMushData}
+          <p>{props.name_common}</p>
+          {/* <p >{data.name_call}</p> */}
+          <p>{props.name_latin}</p>
           {/* <Typography gutterBottom variant="h5" component="h2">
             name_common
           </Typography>

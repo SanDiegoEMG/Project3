@@ -95,25 +95,33 @@ const speciesSeed = [
       name_latin: "Hericium erinaceus",
       name_common: "Lion's Mane",
       name_call: "lions",
-      gestation: 15
+      gestation: 15,
+      imageUrl: "/assets/images/lions-mane.jpg",
+      description: "Lion's Mane Description"
   },
   {
       name_latin: "Pleurotus ostreatus",
       name_common: "Pearl Oyster",
       name_call: "pearl",
-      gestation: 20
+      gestation: 20,
+      imageUrl: "/assets/images/pearl-oyster.jpg",
+      description: "Pearl Oyster Description"
   },
   {
       name_latin: "Pleurotus djamor",
       name_common: "Pink Oyster",
       name_call: "pink",
-      gestation: 15
+      gestation: 15,
+      imageUrl: "/assets/images/pink-oyster.jpg",
+      description: "Pink Oyster Description"
   },
   {
       name_latin: "Pleurotus eringyi",
       name_common: "King Oyster",
       name_call: "king",
-      gestation: 20
+      gestation: 20,
+      imageUrl: "/assets/images/king-oyster.jpg",
+      description: "King Oyster"
   },
     // {
   //     name_latin: "Pleurotus pulmonarius",
