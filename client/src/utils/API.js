@@ -23,12 +23,20 @@ export default {
   },
 
   // get all batch documents as array of objects
-  getAllBatch: () => {
-    return axios.get(`/api/batch`);
-  },
+  // getAllBatch: () => {
+  //   return axios.get(`/api/batch`);
+  // },
+
+  // // start a new batch document (use on Admin page)
+  // startBatch: (batchNum, bagNum, species, bagSize) => {
+  //   return axios.post('api/batch', {batchNum: batchNum, bagNum: bagNum, species: species, bagSize: bagSize}); 
+  // }
 
   // start a new batch document (use on Admin page)
-  startBatch: (batchNum, bagNum, species, bagSize) => {
-    return axios.post('api/batch', {batchNum: batchNum, bagNum: bagNum, species: species, bagSize: bagSize}); 
+  startBatch: (batchNum, bagNum) => {
+    return axios.post('api/batch', {
+      batchNum: batchNum,
+      bagNum: bagNum
+    }); 
   }
 };

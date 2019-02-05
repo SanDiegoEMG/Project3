@@ -6,7 +6,7 @@ const batchSchema = new Schema({
         type: Number, 
     },
     bagNum: {
-        type: Number
+        type: Number,
     },
     species: {
         type: String,

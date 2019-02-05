@@ -48,6 +48,7 @@ app.post('/api/login', (req, res) => {
   }).catch(err => res.status(404).json({success: false, message: "User not found", error: err}));
 });
 
+
 // SIGNUP ROUTE
 app.post('/api/signup', (req, res) => {
   db.User.create(req.body)
@@ -87,7 +88,12 @@ app.use(function (err, req, res, next) {
   }
 });
 
-
+const batchSeed = [
+  {
+    batchNum: 1234,
+    bagNum: 12
+  }
+]
 
 // Code to seed species collection
 const speciesSeed = [
@@ -160,6 +166,18 @@ db.Species
 });
 // END seed code
 
+
+db.Batch
+.deleteMany({})
+.then(() => db.Batch.collection.insertMany(batchSeed))
+.then(data => {
+  console.log(data.result.n + " records inserted!");
+})
+.catch(err => {
+  console.error(err);
+});
+
+
 // back-end api routes for species collection
 // get json of all documents in Species collection
 app.get("/api/species", (req, res) => {
@@ -221,12 +239,21 @@ app.get("/api/batch", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
-// create new BATCH document
-app.post("/api/batch", (req, res) => {
+// // create new BATCH document
+// app.post("/api/batch", (req, res) => {
+//   db.Batch
+//     .create(req.body)
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+
+// BATCH ROUTE
+app.post('/api/batch', (req, res) => {
+  console.log(req.body);
   db.Batch
-    .create(req.body)
-    .then(datafoo => res.json(datafoo))
-    .catch(err => res.status(400).json(err));
+  .create(req.body)
+  .then(dbBatch => res.json(dbBatch))
+  .catch(err => res.status(400).json(err));
 });
 
 // update a document in BATCH collection using its id
