@@ -9,19 +9,27 @@ class Batch extends Component {
     super();
     this.state = {
       batchNum: "",
-      bagNum: ""
+      bagNum: "",
+      species: "",
+      bagSize: "",
+      growthStage: ""
   }
   }
 
 
   handleFormSubmit = event => {
+    
     event.preventDefault();
 
-    API.startBatch(this.state.batchNum, this.state.bagNum)
+    API.startBatch(this.state.batchNum, this.state.bagNum, this.state.species, this.state.bagSize, this.state.growthStage)
       .then(res => {
+        alert(`Added: ${res.data.species}`)
         this.setState({ 
           batch: res.data,
-          bagNum: res.data
+          bag: res.data,
+          species: res.data,
+          bagSize: res.data,
+          growth: res.data
         })
 
         // once user is logged in
@@ -59,17 +67,17 @@ class Batch extends Component {
             <label htmlFor="bagNum">Bag Number:</label>
             <input className="form-control"
                    placeholder="Enter Bag Number"
-                   name="bagnum"
+                   name="bagNum"
                    type="number"
                    id="bagNum"
                    onChange={this.handleChange}/>
           </div>
-          {/* <div className="form-group">
+          <div className="form-group">
             <label htmlFor="species">Species:</label>
             <input className="form-control"
                    placeholder="Enter Species Here"
                    name="species"
-                   type="string"
+                   type="text"
                    id="species"
                    onChange={this.handleChange}/>
           </div>
@@ -77,17 +85,17 @@ class Batch extends Component {
             <label htmlFor="bagSize">Bag Size:</label>
             <input className="form-control"
                    placeholder="Enter Bag Size"
-                   name="bagsize"
+                   name="bagSize"
                    type="number"
                    id="bagSize"
                    onChange={this.handleChange}/>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="growthStage">Growth Stage:</label>
             <input className="form-control"
                    placeholder="Enter Growth Stage"
-                   name="growth stage"
-                   type="string"
+                   name="growthStage"
+                   type="text"
                    id="growthStage"
                    onChange={this.handleChange}/>
           </div> */}

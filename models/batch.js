@@ -14,7 +14,7 @@ const batchSchema = new Schema({
     bagSize: {
         type: Number,
     },
-    growStage: {
+    growthStage: {
         type: Number,
     }
 });

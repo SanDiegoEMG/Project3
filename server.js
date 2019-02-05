@@ -92,7 +92,10 @@ app.use(function (err, req, res, next) {
 const batchSeed = [
   {
     batchNum: 1234,
-    bagNum: 12
+    bagNum: 12,
+    species: "Red Oyster",
+    bagSize: 10,
+    growthStage: 5
   }
 ]
 
