@@ -3,7 +3,7 @@ import API from "../../utils/API";
 
 
 
-class BatchForm extends React.Component {
+class McForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {name: '', source: '', number: null};
@@ -68,4 +68,4 @@ class BatchForm extends React.Component {
     }
 }
 
-export default BatchForm;
+export default McForm;

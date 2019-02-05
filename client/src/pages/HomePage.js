@@ -67,7 +67,7 @@ function CenteredGrid(props) {
                 You. Me. Mushrooms.
               </p>
               <p className={classes.headline}>
-                Who we are and what we are doing
+                Who we are and what we do
               </p>
               <hr></hr>
               We grow, harvest, and deliver specialty gourmet culinary & medicinal mushrooms for San Diego restaurants, neighborhood markets, and direct-to-public sales.

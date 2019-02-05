@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BatchForm from "../components/BatchForm/BatchForm"
+import McForm from "../components/McForm/McForm"
 // import logo from './logo.svg';
 // import DatePicker from '../components/DatePicker/DatePicker';
 // import Table from '../components/Table/Table';
@@ -14,7 +14,7 @@ class AdminPage extends Component {
       <div>
         <Grid container spacing={20} style={{width:"100%"}}>
 
-        <BatchForm/>
+        <McForm/>
 
         </Grid>
       </div>
