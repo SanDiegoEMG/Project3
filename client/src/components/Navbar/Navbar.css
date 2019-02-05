@@ -1,9 +1,18 @@
 .navbar{
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 8px;
     background-color: #C60000;
     color: #ffc1c1;
-    margin-bottom: 50px;
-    /* position: fixed; */
+}
+
+img{
+    height: 200%;
+    margin-left: 0;
+    position: absolute;
+    border-bottom: 10px;
+    border-right: 30px;
+    border-left: 30px;
+    border-style: double;
+    border-color: #C60000;
 }

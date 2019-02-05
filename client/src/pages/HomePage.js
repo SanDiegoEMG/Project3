@@ -19,14 +19,15 @@ const styles = theme => ({
     fontWeight: 525,
   },
   root: {
+    
     backgroundImage : 'url(' + imgUrl + ')',
     flexGrow: 1,
-    backgroundSize: 1000,
-    backgroundPosition: 'center',
-    // SHOULD CHANGE MARGINTOP WITH NEW NAVBAR
+    backgroundSize: "100%",
+    backgroundRepeat: 'no-repeat',
     marginTop: 0,
     backgroundColor: "#fcf1e5",
-    height: 500
+    height: 500,
+    
   },
   headline: {
     fontFamily: "Chelsea Market",
@@ -49,17 +50,17 @@ function CenteredGrid(props) {
 
   return (
     <div className={classes.root}>
+    
 
       <Grid container spacing={16} style={{width: '100%'}}>
 
         {/* THIS GRID IS JUST FOR ALIGNMENT */}
         <Grid item xs={1}>
-          <p className={classes.paper}></p>
         </Grid>
 
         <Grid item xs={7}>
           <p className={classes.paper}>
-            <Paper style={{padding: 10, marginTop: 455}}>
+            <Paper style={{padding: 10, marginTop: "57%"}}>
               <p className={classes.headline}>
                 Welcome to You Me Mushrooms!
               </p>
@@ -92,6 +93,7 @@ function CenteredGrid(props) {
             </Grid>
         
       </Grid>
+      
     </div>
   );
 }

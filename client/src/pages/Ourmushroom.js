@@ -26,7 +26,7 @@ class Mushroom extends Component {
     // <div className={classes.root}>
     <div className="Mushroompage">
 
-      <Grid container spacing={16} style={{width: '100%', backgroundColor:"FEF2E4"}}>
+    <Grid container spacing={16} style={{width: '100%', backgroundColor:"FEF2E4"}}>
       
       <Grid container spacing={24} style={{width: '100%', marginTop: 100}}>
       
@@ -49,14 +49,14 @@ class Mushroom extends Component {
             <Grid item xs={6} style={{marginTop: 20}}><MushroomImageCard1 src={this.state.currentSrc} titleOfMush={this.state.currentTitle} /></Grid>
             <Grid item xs={2}></Grid>
             
-          </Grid>
+        </Grid>
         {/* </Grid> */}
         
         </Grid>
-        </Grid>
-        
       </Grid>
-      <BottomAppBar/>
+        
+    </Grid>
+    <BottomAppBar/>
     </div>
 
   )

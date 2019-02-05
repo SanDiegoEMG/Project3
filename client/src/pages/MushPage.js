@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import ControlledExpansionPanels from "../components/Sidebar/Sidebar";
-import MainCard from "../components/MainCard/MainCard";
+// import MainCard from "../components/MainCard/MainCard";
 import MediaCard from "../components/MediaCard/MediaCard";
 import Grid from "@material-ui/core/Grid";
+import '../pages/MushPage.css';
 import API from "../utils/API";
 
 
@@ -54,11 +55,13 @@ class MushPage extends Component {
 
       <Grid container spacing={16} style={{width: '100%', backgroundColor:"FEF2E4"}}>
       
-        <Grid container spacing={24} style={{width: '100%', marginTop: 100}}>
+        <Grid container spacing={24} style={{width: '100%', marginTop: "12%"}}>
 
           
           <Grid item xs={3} style={{marginTop: 100}}>
           {/* here goes sidebar */}
+
+            <ControlledExpansionPanels />
           </Grid>
 
           <Grid item xs={9} style={{width:"100%"}}>
@@ -66,9 +69,9 @@ class MushPage extends Component {
               <Grid container spacing={8} style={{width:"100%"}} direcion="row" justify="center" alignItems="center">
 
             
-                  <Grid item xs={1}></Grid>
+                  
                   {this.state.speciesArray.map(item => (
-                    <Grid item xs={2} key={item._id}>
+                    <Grid item xs={3} key={item._id}>
                     <MediaCard 
                       name_common={item.name_common} 
                       name_latin={item.name_latin}
@@ -97,6 +100,11 @@ class MushPage extends Component {
         </Grid>
       
       </Grid>
+
+
+
+
+
 
 
 
