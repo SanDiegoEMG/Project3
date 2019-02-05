@@ -11,13 +11,7 @@ class App extends Component {
     console.log(process.env.REACT_APP_SECRET_CODE);
     return (
       <div className="App">
-        {/* NEW HOME COMPONENT */}
         <Home />
-
-        {/* PREVIOUS CODE FOR REACT HEADER AND LOGO */}
-        {/* <div className="App-header"> */}
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* </div> */}
 
       <BottomAppBar/>
 
