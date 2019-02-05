@@ -14,7 +14,10 @@ class MushPage extends Component {
     this.state = {
       speciesArray: [],
       click: true,
-      description: "Get more info by click on a mushroom"
+      description: "Get more info by clicking on a mushroom",
+      recipes: [],
+      fun_facts: [],
+      grows_on: ""
   }
   };
 
@@ -27,48 +30,35 @@ class MushPage extends Component {
     API.getAllSpecies()
       .then(res => {
         this.setState({ speciesArray: res.data});
+        console.log(this.state.speciesArray)
       })
       .catch(err => console.log(err));
   };
 
-  getMushroomInfo = (description) => {
-    this.setState({description: description});
+  getMushroomInfo = (description, recipes, fun_facts, grows_on) => {
+    this.setState({
+      description: description,
+      recipes: recipes,
+      fun_facts: fun_facts,
+      grows_on: grows_on
+    });
   };
-
-
-  // PSEUDO CODE if there is nothing assigned to 'mainCardContent' state, show the 'landing' info in the mainCard - otherwise, show info associated with each mushroom from the components -> SpeciesDetails 
-  // changeMainCardContent = event => {
-  //   if (!mainCardContent) {
-
-  //   }
-  // };
-
-
 
 
   render() {
  
-
     return (
-
       <div className="Mushroompage">
-
       <Grid container spacing={16} style={{width: '100%', backgroundColor:"FEF2E4"}}>
-      
         <Grid container spacing={24} style={{width: '100%', marginTop: "12%"}}>
-
-          
           <Grid item xs={3} style={{marginTop: 100}}>
-          {/* here goes sidebar */}
-
+            {/* glossary sidebar */}
             <ControlledExpansionPanels />
-          </Grid>
 
+          </Grid>
           <Grid item xs={9} style={{width:"100%"}}>
             
               <Grid container spacing={8} style={{width:"100%"}} direcion="row" justify="center" alignItems="center">
-
-            
                   
                   {this.state.speciesArray.map(item => (
                     <Grid item xs={3} key={item._id}>
@@ -77,28 +67,25 @@ class MushPage extends Component {
                       name_latin={item.name_latin}
                       picsrc = {item.imageUrl}
                       description = {item.description}
+                      grows_on = {item.grows_on}
+                      recipes = {item.recipe}
+                      fun_facts = {item.fun_facts}
                       getMushroomInfo={this.getMushroomInfo}
                     />
-                  </Grid>
-                  ))}
+                    </Grid>
+                   ))
+                  }
 
                   <Grid item xs={3}></Grid>
                   <Grid item xs={6} style={{marginTop: 20}}>
-                    <p>{this.state.description}</p>
-                    {/* <MainCard
-                    src={this.state.currentSrc}
-                    ></MainCard> */}
+                    {this.state.description}
+                    {this.state.grows_on}
+               
                   </Grid>
                   <Grid item xs={2}></Grid>
-
               </Grid>
-          
-          
           </Grid>
-
-
         </Grid>
-      
       </Grid>
 
 
