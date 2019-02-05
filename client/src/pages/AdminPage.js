@@ -9,21 +9,27 @@ class Batch extends Component {
     super();
     this.state = {
       batchNum: "",
-      bagNum: ""
+      bagNum: "",
+      species: "",
+      bagSize: "",
+      growthStage: ""
   }
   }
 
 
   handleFormSubmit = event => {
+    
     event.preventDefault();
 
-    API.startBatch(this.state.batchNum, this.state.bagNum, this.state.species, this.state.bagSize)
+    API.startBatch(this.state.batchNum, this.state.bagNum, this.state.species, this.state.bagSize, this.state.growthStage)
       .then(res => {
+        alert(`Added: ${res.data.species}`)
         this.setState({ 
           batch: res.data,
           bag: res.data,
           species: res.data,
-          bagSize: res.data
+          bagSize: res.data,
+          growth: res.data
         })
 
         // once user is logged in
@@ -84,7 +90,7 @@ class Batch extends Component {
                    id="bagSize"
                    onChange={this.handleChange}/>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="growthStage">Growth Stage:</label>
             <input className="form-control"
                    placeholder="Enter Growth Stage"
@@ -92,7 +98,7 @@ class Batch extends Component {
                    type="text"
                    id="growthStage"
                    onChange={this.handleChange}/>
-          </div>
+          </div> */}
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         {/* <p><Link to="/signup">Go to Signup</Link></p> */}
