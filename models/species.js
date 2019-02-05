@@ -26,6 +26,17 @@ const Schema = mongoose.Schema;
         description: {
             type: String,
             required: true
+        },
+        recipes: [{
+            type: String,
+            default: "http://www.foxfarmforage.com/foraging/so-you-dont-like-mushrooms-because-the-texture-is-like-a-slug-i-can-help-you-with-that-how-to-properly-cook-mushrooms/"
+        }],
+        fun_facts: [{
+            type: String,
+            default: "Mushrooms are more closely related in DNA to humans than to plants. Like human skin, mushrooms can produce vitamin D by being exposed to sunlight. In fact, exposing a freshly cut shiitake mushroom, gills up, to the sun for eight hours can increase its vitamin D content by as much as 4,600 times!"
+        }],
+        grows_on: {
+            type: String,
         }
     });
     

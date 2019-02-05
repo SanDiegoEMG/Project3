@@ -41,6 +41,9 @@ const styles = theme => ({
     fontWeight: 600,
     marginBottom: 0,
     color: "#2f2f2f"
+  },
+  noBulletList: {
+    listStyleType: "none"
   }
 });
 
@@ -61,10 +64,15 @@ function CenteredGrid(props) {
           <p className={classes.paper}>
             <Paper style={{padding: 10, marginTop: 455}}>
               <p className={classes.headline}>
-                Welcome to You Me Mushrooms!
+                You. Me. Mushrooms.
+              </p>
+              <p className={classes.headline}>
+                Who we are and what we are doing
               </p>
               <hr></hr>
-              Growing and harvesting specialty gourmet, medicinal mushrooms for San Diego restaurants, neighborhood markets, and community members.
+              Combined 35+ years in professional food service
+              
+              We grow, harvest, and deliver specialty gourmet &amp medicinal mushrooms for San Diego restaurants, neighborhood markets, and individual community members.
           </Paper>
           </p>
         </Grid>
@@ -79,10 +87,26 @@ function CenteredGrid(props) {
             <p className={classes.paper}>
               <Paper style={{padding: 10, marginBottom: 200}}>
                 <p className={classes.headline2}>
-                Local. Nutritious. Delicious. Sustainable.                
+                Local. Nutritious. Delicious.               
                 </p> 
+                <p className={classes.headline2}>
+                True about ALL the mushrooms we grow           
+                </p>
                 <hr></hr>
-                 Available at local restaurants, neighborhood markets, and direct to public sale.
+                <ul className={classes.noBulletList}>
+                  <li>No fat or choloestorol </li>
+                  <li>Gluten free </li>
+                  <li>Low in calories, high in nutrition</li>
+                  <li>Contain over 18 different amino acids</li>
+                  <li>High in niacin</li>
+                  <li>Good source of: potassium | riboflavin | pantothenic acid | phosphorus | copper</li>
+                  <li>Contain 1,3/1,6 Beta-Glucans</li>
+                </ul>
+                
+
+               
+  
+        
               </Paper>
             </p>
             </Grid>

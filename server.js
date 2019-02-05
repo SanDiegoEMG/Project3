@@ -97,7 +97,10 @@ const speciesSeed = [
       name_call: "lions",
       gestation: 15,
       imageUrl: "/assets/images/lions-mane.jpg",
-      description: "Lion's Mane Description"
+      description: "Lion's Mane Description",
+      recipes: ["http://www.sugardetox.me/recipe/sauteed-lions-mane-mushroom/", "http://www.randwich.es/blog/2015/10/19/pan-fried-lions-mane-mushroom", ],
+      fun_facts: ["", ],
+      grows_on: ["", ],
   },
   {
       name_latin: "Pleurotus ostreatus",
@@ -105,7 +108,10 @@ const speciesSeed = [
       name_call: "pearl",
       gestation: 20,
       imageUrl: "/assets/images/pearl-oyster.jpg",
-      description: "Pearl Oyster Description"
+      description: "Pearl Oyster Description",
+      recipes: ["https://www.allrecipes.com/recipe/247435/oyster-mushroom-pasta/?internalSource=hub%20recipe&referringContentType=Search", "https://juliasalbum.com/oyster-mushrooms-garlic-and-green-onions-saute-paleo-gluten-free/"],
+      fun_facts: ["Throughout the world, pearl oyster mushrooms are the most common of the oyster mushrooms used by chef's.", "During the growing process, the more light introduced, the more white pearly color this species' caps will become.",  "Pleurotus ostreatus grow naturally all over the globe. It 'throws off' various sub strains including the Blue Oyster Mushroom (pleurotus columbinus).", "Oyster mushrooms are naturally high in lovastatin, a drug approved by the FDA for lowering "`bad`" cholesterol and raising "`good`" cholesterol. Higher concentrations of lovastatin are in the caps then the stems, more concentrated on the mature gills, and especially in the spores." ],
+      grows_on: "Wide range of substrates including straw (wheat | rye | oat | rice | | barley straw), corn, coffee grounds, banana plant & fruit waste, most hardwoods & hardwood by-products (sawdust | paper), compost & more!",
   },
   {
       name_latin: "Pleurotus djamor",
@@ -113,7 +119,10 @@ const speciesSeed = [
       name_call: "pink",
       gestation: 15,
       imageUrl: "/assets/images/pink-oyster.jpg",
-      description: "Pink Oyster Description"
+      description: "Pink Oyster Description",
+      recipes: [""],
+      fun_facts: ["", ],
+      grows_on: ["", ],
   },
   {
       name_latin: "Pleurotus eringyi",
@@ -121,8 +130,15 @@ const speciesSeed = [
       name_call: "king",
       gestation: 20,
       imageUrl: "/assets/images/king-oyster.jpg",
-      description: "King Oyster"
+      description: "King Oyster",
+      recipes: ["https://omnivorescookbook.com/recipes/teriyaki-king-oyster-mushroom", "https://www.cooksillustrated.com/how_tos/6059-king-oyster-mushrooms"],
+      fun_facts: ["", ],
+      grows_on: ["", ],
+
   },
+  {
+
+  }
     // {
   //     name_latin: "Pleurotus pulmonarius",
   //     name_common: "Italian Oyster / Phoenix Mushroom",
