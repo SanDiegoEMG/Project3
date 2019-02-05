@@ -30,5 +30,10 @@ export default {
   // start a new batch document (use on Admin page)
   startBatch: (batchNum, bagNum, species, bagSize) => {
     return axios.post('api/batch', {batchNum: batchNum, bagNum: bagNum, species: species, bagSize: bagSize}); 
+  },
+
+    // start a new batch document (use on Admin page)
+  startMotherculture: (name, source, number) => {
+    return axios.post('api/mothercultures', {name, source, number}); 
   }
 };

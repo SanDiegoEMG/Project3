@@ -45,7 +45,7 @@ class ControlledExpansionPanels extends React.Component {
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           {/* <Typography className={classes.heading}>Link 1</Typography> */}
             <Typography className={classes.secondaryHeading}>
-              Mushy Word 1
+              Strain
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>

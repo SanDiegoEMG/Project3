@@ -8,9 +8,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import axios from "axios";
 
-// Our Components
+// Our Pages
 import Login from './components/Login';
-import Profile from './components/Profile';
+// import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import SpeciesCalendar from './components/SpeciesCalendar';
@@ -33,7 +33,7 @@ ReactDOM.render(
             <Route exact path="/adminpage" component={AdminPage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/profile" component={Profile} />
+            {/* <Route exact path="/profile" component={Profile} /> */}
             <Route exact path="/mushpage" component={MushPage} />
         </div>
     </Router>

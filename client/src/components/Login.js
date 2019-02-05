@@ -20,8 +20,8 @@ class Login extends Component {
     this.Auth.login(this.state.email, this.state.password)
       .then(res => {
         // once user is logged in
-        // take them to their profile page
-        this.props.history.replace(`/profile`);
+        // take them to the admin page
+        this.props.history.replace(`/adminpage`);
       })
       .catch(err => {
         alert(err.response.data.message)

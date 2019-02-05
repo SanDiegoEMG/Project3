@@ -14,11 +14,6 @@ class App extends Component {
         {/* NEW HOME COMPONENT */}
         <Home />
 
-        {/* PREVIOUS CODE FOR REACT HEADER AND LOGO */}
-        {/* <div className="App-header"> */}
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* </div> */}
-
       <BottomAppBar/>
 
       </div>

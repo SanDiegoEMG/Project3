@@ -11,7 +11,7 @@ class MushPage extends Component {
     this.state = {
       speciesArray: [],
       click: true,
-      description: "Get more info by click on a mushroom"
+      description: "Get more info by clicking on a mushroom above"
   }
   };
 
@@ -95,8 +95,6 @@ class MushPage extends Component {
         </Grid>
       
       </Grid>
-
-
 
       </div>
       );

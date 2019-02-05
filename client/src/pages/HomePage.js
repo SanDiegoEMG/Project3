@@ -70,9 +70,9 @@ function CenteredGrid(props) {
                 Who we are and what we are doing
               </p>
               <hr></hr>
-              Combined 35+ years in professional food service
-              
-              We grow, harvest, and deliver specialty gourmet &amp medicinal mushrooms for San Diego restaurants, neighborhood markets, and individual community members.
+              We grow, harvest, and deliver specialty gourmet culinary & medicinal mushrooms for San Diego restaurants, neighborhood markets, and direct-to-public sales.
+
+              We are on a mission to expand awareness & availability of these healthy delectibles to our San Diego community.
           </Paper>
           </p>
         </Grid>
@@ -90,14 +90,13 @@ function CenteredGrid(props) {
                 Local. Nutritious. Delicious.               
                 </p> 
                 <p className={classes.headline2}>
-                True about ALL the mushrooms we grow           
+                ALL the mushrooms we grow are naturally          
                 </p>
                 <hr></hr>
                 <ul className={classes.noBulletList}>
-                  <li>No fat or choloestorol </li>
-                  <li>Gluten free </li>
+                  <li>No fat | choloestorol | gluten </li>
                   <li>Low in calories, high in nutrition</li>
-                  <li>Contain over 18 different amino acids</li>
+                  <li>On average, contain over 18 different amino acids</li>
                   <li>High in niacin</li>
                   <li>Good source of: potassium | riboflavin | pantothenic acid | phosphorus | copper</li>
                   <li>Contain 1,3/1,6 Beta-Glucans</li>
