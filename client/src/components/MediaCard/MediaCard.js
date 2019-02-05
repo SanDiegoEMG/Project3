@@ -30,9 +30,6 @@ function MediaCard(props) {
       <div>
       <p> {props.description} </p>
       <p> {props.grows_on} </p>
-      <ul>
-        <li>{props.recipes}</li>
-      </ul>
       </div>
       ))}
       >
