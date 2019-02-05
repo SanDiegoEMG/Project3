@@ -4,6 +4,7 @@ import MediaCard from "../components/MediaCard/MediaCard";
 import Grid from "@material-ui/core/Grid";
 import '../pages/MushPage.css';
 import API from "../utils/API";
+import RecipeComponent from "../components/RecipeComponent/RecipeComponent";
 
 class MushPage extends Component {
 
@@ -13,9 +14,9 @@ class MushPage extends Component {
       speciesArray: [],
       description: "Get more info by clicking on a mushroom",
       grows_on: "",
-      recipes: [],
-      fun_facts: [],
-  }
+      recipesArray: [],
+      fun_facts: []
+    }
   };
 
   componentDidMount() {
@@ -35,17 +36,19 @@ class MushPage extends Component {
   getMushroomInfo = (description, recipes, fun_facts, grows_on) => {
     this.setState({
       description: description,
-      recipes: recipes,
+      // recipes: recipes,
       fun_facts: fun_facts,
       grows_on: grows_on
     });
   };
 
-  arrayInArray = (data) => {
-        data.recipes.forEach ( e => {
-        console.log ("this is e ", e)
-          })      
-    };
+  // arrayInArray = (data) => {
+  //       data.recipes.forEach ( e => {
+  //       // console.log ("this is e ", e)
+  //       this.state.recipesArray.push(e)
+  //       console.log(this.state.recipesArray)
+  //         })      
+  //   };
 
 
   render() {
@@ -74,7 +77,7 @@ class MushPage extends Component {
                       // recipes = {item.recipes}
                       fun_facts = {item.fun_facts}
                       getMushroomInfo={this.getMushroomInfo}
-                      recipes= {this.arrayInArray(item)}
+                      recipesArray= {item.recipes}
                     />
                     </Grid>
                    ))
@@ -84,6 +87,14 @@ class MushPage extends Component {
                   <Grid item xs={6} style={{marginTop: 20}}>
                     {this.state.description}
                     {this.state.grows_on}
+
+                  
+                  <ul> {this.state.recipesArray.map(item => (
+                      <RecipeComponent
+                      recipe = {item}
+                      />
+                    ))}
+                  </ul>
                
                   </Grid>
                   <Grid item xs={2}></Grid>
