@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import AuthService from './AuthService';
+import './Login.css'
 // import {Link} from 'react-router-dom';
 
 class Login extends Component {
@@ -38,7 +39,8 @@ class Login extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Login</h1>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <h1 className="LoginTitle">Login</h1>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>

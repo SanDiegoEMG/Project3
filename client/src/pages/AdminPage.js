@@ -13,20 +13,14 @@ class AdminPage extends Component {
 
     return (
       <div>
-
-
-      {/* NEW HOME COMPONENT */}
+        <br/><br/><br/><br/><br/><br/>
         
-        <Grid container spacing={24} style={{width:"100%"}}>
+        <Grid container spacing={24} style={{width:"100%", marginBottom: "10%"}}>
 
         <DatePicker></DatePicker>
         
         <InputField></InputField>
         <Table></Table>
-        {/* PREVIOUS CODE FOR REACT HEADER AND LOGO */}
-        {/* <div className="App-header"> */}
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* </div> */}
         </Grid>
       </div>
     );

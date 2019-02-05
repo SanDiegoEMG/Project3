@@ -18,15 +18,15 @@ function CenteredGrid(props) {
       <Grid container spacing={22}>
 
         {/* THIS GRID IS JUST FOR ALIGNMENT */}
-        <Grid item xs={3}>
+        <Grid item xs={5}>
           <p className={classes.paper}></p>
         </Grid>
 
-        <Grid item xs={6}>
+        <Grid item xs={5}>
           <Calendar></Calendar>
         </Grid>
 
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <p className={classes.paper}>
           </p>
         </Grid>

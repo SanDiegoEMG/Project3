@@ -57,7 +57,7 @@ class BottomAppBar extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Fragment style={{width: '100%'}}>
+      <Fragment>
         {/* <CssBaseline /> */}
         <AppBar position="fixed" color="primary" className={classes.appBar}>
           <div className={classes.stayInfo}>
@@ -76,20 +76,7 @@ class BottomAppBar extends Component {
               <ContainedButtons />
             </div>
           </div>
-          {/* {this.state.name}
-          {this.state.email}
-          <input
-            className={classes.textInput}
-            name="name"
-            value={this.state.name}
-            onChange={this.handleInput}
-          />
-          <input
-            className={classes.textInput}
-            name="email"
-            value={this.state.email}
-            onChange={this.handleInput}
-          /> */}
+          
         </AppBar>
       </Fragment>
     );

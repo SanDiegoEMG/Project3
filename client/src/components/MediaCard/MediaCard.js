@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -21,12 +18,12 @@ const styles = {
   }
 };
 
-let imgUrl = 'https://cdn.pixabay.com/photo/2016/08/27/11/16/mushrooms-1623893_960_720.jpg';
-let MushroomTypeTitle = 'Maitake Mushroom';
+// let imgUrl = 'https://cdn.pixabay.com/photo/2016/08/27/11/16/mushrooms-1623893_960_720.jpg';
+// let MushroomTypeTitle = 'Maitake Mushroom';
 
 function MediaCard(props) {
   const { classes } = props;
-  const { showMushData } = props;
+  // const { showMushData } = props;
   return (
     <Card className={classes.card} onClick={() => props.getMushroomInfo(props.description)}>
       <CardActionArea>
