@@ -11,9 +11,10 @@ class MushPage extends Component {
     super()
     this.state = {
       speciesArray: [],
-      click: true,
-      description: "Get more info by click on a mushroom",
-      gestation: "Gestation"
+      description: "Get more info by clicking on a mushroom",
+      grows_on: "",
+      recipes: [],
+      fun_facts: [],
   }
   };
 
@@ -25,34 +26,43 @@ class MushPage extends Component {
   showSpecies = () => {
     API.getAllSpecies()
       .then(res => {
-        this.setState({ speciesArray: res.data, });
+        this.setState({ speciesArray: res.data});
+        console.log(this.state.speciesArray)
       })
       .catch(err => console.log(err));
   };
 
-  getMushroomInfo = (description, gestation) => {
-    this.setState({description: description, gestation: gestation});
+  getMushroomInfo = (description, recipes, fun_facts, grows_on) => {
+    this.setState({
+      description: description,
+      recipes: recipes,
+      fun_facts: fun_facts,
+      grows_on: grows_on
+    });
   };
 
+  arrayInArray = (data) => {
+        data.recipes.forEach ( e => {
+        console.log ("this is e ", e)
+          })      
+    };
+
+
   render() {
+
     return (
-
       <div className="Mushroompage">
-
       <Grid container spacing={16} style={{width: '100%', backgroundColor:"FEF2E4"}}>
-      
         <Grid container spacing={24} style={{width: '100%', marginTop: "12%"}}>
-          
           <Grid item xs={3} style={{marginTop: 100}}>
-          {/* here goes sidebar */}
-
+            {/* glossary sidebar */}
             <ControlledExpansionPanels />
-          </Grid>
 
+          </Grid>
           <Grid item xs={9} style={{width:"100%"}}>
             
               <Grid container spacing={8} style={{width:"100%"}} direcion="row" justify="center" alignItems="center">
-   
+                  
                   {this.state.speciesArray.map(item => (
                     <Grid item xs={3} key={item._id}>
                     <MediaCard 
@@ -60,23 +70,23 @@ class MushPage extends Component {
                       name_latin={item.name_latin}
                       picsrc = {item.imageUrl}
                       description = {item.description}
-                      gestation = {item.gestation}
+                      grows_on = {item.grows_on}
+                      // recipes = {item.recipes}
+                      fun_facts = {item.fun_facts}
                       getMushroomInfo={this.getMushroomInfo}
+                      recipes= {this.arrayInArray(item)}
                     />
-                  </Grid>
-                  ))}
+                    </Grid>
+                   ))
+                  }
 
                   <Grid item xs={3}></Grid>
                   <Grid item xs={6} style={{marginTop: 20}}>
-                  <p>{this.state.description}</p>
-                  <p>{this.state.gestation}</p>
-                    
-                      {/* <MainCard
-                      src={this.state.currentSrc}
-                      ></MainCard> */}
+                    {this.state.description}
+                    {this.state.grows_on}
+               
                   </Grid>
                   <Grid item xs={2}></Grid>
-
               </Grid>
           </Grid>
         </Grid>
