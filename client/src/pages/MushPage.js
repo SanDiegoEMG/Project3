@@ -4,7 +4,6 @@ import MediaCard from "../components/MediaCard/MediaCard";
 import Grid from "@material-ui/core/Grid";
 import '../pages/MushPage.css';
 import API from "../utils/API";
-import RecipeComponent from "../components/RecipeComponent/RecipeComponent";
 
 class MushPage extends Component {
 
@@ -33,22 +32,11 @@ class MushPage extends Component {
       .catch(err => console.log(err));
   };
 
-  getMushroomInfo = (description, recipes, fun_facts, grows_on) => {
+  getMushroomInfo = (description) => {
     this.setState({
-      description: description,
-      // recipes: recipes,
-      fun_facts: fun_facts,
-      grows_on: grows_on
+      description
     });
   };
-
-  // arrayInArray = (data) => {
-  //       data.recipes.forEach ( e => {
-  //       // console.log ("this is e ", e)
-  //       this.state.recipesArray.push(e)
-  //       console.log(this.state.recipesArray)
-  //         })      
-  //   };
 
 
   render() {
@@ -74,10 +62,9 @@ class MushPage extends Component {
                       picsrc = {item.imageUrl}
                       description = {item.description}
                       grows_on = {item.grows_on}
-                      // recipes = {item.recipes}
-                      fun_facts = {item.fun_facts}
                       getMushroomInfo={this.getMushroomInfo}
                       recipesArray= {item.recipes}
+                      fun_facts= {item.fun_facts}
                     />
                     </Grid>
                    ))
@@ -86,16 +73,6 @@ class MushPage extends Component {
                   <Grid item xs={3}></Grid>
                   <Grid item xs={6} style={{marginTop: 20}}>
                     {this.state.description}
-                    {this.state.grows_on}
-
-                  
-                  <ul> {this.state.recipesArray.map(item => (
-                      <RecipeComponent
-                      recipe = {item}
-                      />
-                    ))}
-                  </ul>
-               
                   </Grid>
                   <Grid item xs={2}></Grid>
               </Grid>
