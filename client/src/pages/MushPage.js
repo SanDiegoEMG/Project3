@@ -13,11 +13,10 @@ class MushPage extends Component {
     super()
     this.state = {
       speciesArray: [],
-      click: true,
       description: "Get more info by clicking on a mushroom",
+      grows_on: "",
       recipes: [],
       fun_facts: [],
-      grows_on: ""
   }
   };
 
@@ -44,9 +43,15 @@ class MushPage extends Component {
     });
   };
 
+  arrayInArray = (data) => {
+        data.recipes.forEach ( e => {
+        console.log ("this is e ", e)
+          })      
+    };
+
 
   render() {
- 
+
     return (
       <div className="Mushroompage">
       <Grid container spacing={16} style={{width: '100%', backgroundColor:"FEF2E4"}}>
@@ -68,9 +73,10 @@ class MushPage extends Component {
                       picsrc = {item.imageUrl}
                       description = {item.description}
                       grows_on = {item.grows_on}
-                      recipes = {item.recipe}
+                      // recipes = {item.recipes}
                       fun_facts = {item.fun_facts}
                       getMushroomInfo={this.getMushroomInfo}
+                      recipes= {this.arrayInArray(item)}
                     />
                     </Grid>
                    ))

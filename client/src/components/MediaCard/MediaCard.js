@@ -21,13 +21,18 @@ const styles = {
 
 function MediaCard(props) {
   const { classes } = props;
-  
+
+
+
   return (
     <Card className={classes.card} onClick={() => (
     props.getMushroomInfo(
       <div>
       <p> {props.description} </p>
       <p> {props.grows_on} </p>
+      <ul>
+        <li>{props.recipes}</li>
+      </ul>
       </div>
       ))}
       >
