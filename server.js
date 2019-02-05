@@ -48,6 +48,7 @@ app.post('/api/login', (req, res) => {
   }).catch(err => res.status(404).json({success: false, message: "User not found", error: err}));
 });
 
+
 // SIGNUP ROUTE
 app.post('/api/signup', (req, res) => {
   db.User.create(req.body)
@@ -67,7 +68,34 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
   }).catch(err => res.status(400).send(err));
 });
 
-// SEED CODE for species collection
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+
+app.get('/', isAuthenticated /* Using the express jwt MW here */, (req, res) => {
+  res.send('You are authenticated'); //Sending some response when authenticated
+});
+
+// Error handling
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') { // Send the error rather than to show it on the console
+    res.status(401).send(err);
+  }
+  else {
+    next(err);
+  }
+});
+
+const batchSeed = [
+  {
+    batchNum: 1234,
+    bagNum: 12
+  }
+]
+
 const speciesSeed = [
   {
       name_latin: "Hericium erinaceus",
@@ -125,6 +153,18 @@ db.Species
   console.error(err);
 });
 // END seed code
+
+
+db.Batch
+.deleteMany({})
+.then(() => db.Batch.collection.insertMany(batchSeed))
+.then(data => {
+  console.log(data.result.n + " records inserted!");
+})
+.catch(err => {
+  console.error(err);
+});
+
 
 // back-end api routes for species collection
 // get json of all documents in Species collection
@@ -187,12 +227,21 @@ app.get("/api/batch", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
-// create new BATCH document
-app.post("/api/batch", (req, res) => {
+// // create new BATCH document
+// app.post("/api/batch", (req, res) => {
+//   db.Batch
+//     .create(req.body)
+//     .then(datafoo => res.json(datafoo))
+//     .catch(err => res.status(400).json(err));
+// });
+
+// BATCH ROUTE
+app.post('/api/batch', (req, res) => {
+  console.log(req.body);
   db.Batch
-    .create(req.body)
-    .then(datafoo => res.json(datafoo))
-    .catch(err => res.status(400).json(err));
+  .create(req.body)
+  .then(dbBatch => res.json(dbBatch))
+  .catch(err => res.status(400).json(err));
 });
 
 // update a document in BATCH collection using its id

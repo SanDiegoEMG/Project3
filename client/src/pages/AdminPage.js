@@ -1,30 +1,103 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
-import DatePicker from '../components/DatePicker/DatePicker';
-import Table from '../components/Table/Table';
-import InputField from '../components/InputField/InputField';
-import Grid from "@material-ui/core/Grid";
+import React, {Component} from 'react';
+// import AuthService from '../components/AuthService';
+import API from "../utils/API";
+// import './Login.css'
+// import {Link} from 'react-router-dom';
 
-class AdminPage extends Component {
+class Batch extends Component {
+  constructor() {
+    super();
+    this.state = {
+      batchNum: "",
+      bagNum: ""
+  }
+  }
+
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    API.startBatch(this.state.batchNum, this.state.bagNum)
+      .then(res => {
+        this.setState({ 
+          batch: res.data,
+          bagNum: res.data
+        })
+
+        // once user is logged in
+        // take them to their profile page
+        // this.props.history.replace(`/profile`);
+      })
+      .catch(err => {
+        alert(err.response.data.message)
+      });
+  };
+
+  handleChange = event => {
+    const {name, value} = event.target;
+    this.setState({
+        [name]: value
+    });
+  };
 
   render() {
-    console.log(process.env.REACT_APP_SECRET_CODE);
-
-
     return (
-      <div>
-        <br/><br/><br/><br/><br/><br/>
-        
-        <Grid container spacing={24} style={{width:"100%", marginBottom: "10%"}}>
-
-        <DatePicker></DatePicker>
-        
-        <InputField></InputField>
-        <Table></Table>
-        </Grid>
+      <div className="container">
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <h1 className="AdminpageTitle">Batch Information</h1>
+        <form onSubmit={this.handleFormSubmit}>
+          <div className="form-group">
+            <label htmlFor="batchNum">Batch Number:</label>
+            <input className="form-control"
+                   placeholder="20190204"
+                   name="batchNum"
+                   type="number"
+                   id="batchNum"
+                   onChange={this.handleChange}/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="bagNum">Bag Number:</label>
+            <input className="form-control"
+                   placeholder="Enter Bag Number"
+                   name="bagnum"
+                   type="number"
+                   id="bagNum"
+                   onChange={this.handleChange}/>
+          </div>
+          {/* <div className="form-group">
+            <label htmlFor="species">Species:</label>
+            <input className="form-control"
+                   placeholder="Enter Species Here"
+                   name="species"
+                   type="string"
+                   id="species"
+                   onChange={this.handleChange}/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="bagSize">Bag Size:</label>
+            <input className="form-control"
+                   placeholder="Enter Bag Size"
+                   name="bagsize"
+                   type="number"
+                   id="bagSize"
+                   onChange={this.handleChange}/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="growthStage">Growth Stage:</label>
+            <input className="form-control"
+                   placeholder="Enter Growth Stage"
+                   name="growth stage"
+                   type="string"
+                   id="growthStage"
+                   onChange={this.handleChange}/>
+          </div> */}
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
+        {/* <p><Link to="/signup">Go to Signup</Link></p> */}
       </div>
+
     );
   }
 }
 
-export default AdminPage;
+export default Batch;
