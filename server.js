@@ -68,6 +68,7 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
   }).catch(err => res.status(400).send(err));
 });
 
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -95,7 +96,6 @@ const batchSeed = [
   }
 ]
 
-// Code to seed species collection
 const speciesSeed = [
   {
       name_latin: "Hericium erinaceus",
@@ -103,7 +103,10 @@ const speciesSeed = [
       name_call: "lions",
       gestation: 15,
       imageUrl: "/assets/images/lions-mane.jpg",
-      description: "Lion's Mane Description"
+      description: "Lion's Mane gets attention because of its appearance, but it wins hearts because of its taste and oh-so-good-for-you nutrition",
+      recipes: ["http://www.sugardetox.me/recipe/sauteed-lions-mane-mushroom/", "http://www.randwich.es/blog/2015/10/19/pan-fried-lions-mane-mushroom", ],
+      fun_facts: ["Believed to stimulate nerve growth enough to improve minor cognitive impairment, Lion's Mane is considered a gourmet and medicinal species", "One of the more interesting types of edible mushrooms, in place of the traditional mushroom cap is a large clump of 'teeth', which range from a few millimeters to a centimetermeter long. Shaved off and cooked on their own, these 'teeth' taste remarkably like delicate crab", "Most commonly found on dead and decaying hardwood logs throughout North America in the fall." ],
+      grows_on: "Grows best on hardwood sawdust supplement with 10-20% wheat bran."
   },
   {
       name_latin: "Pleurotus ostreatus",
@@ -111,7 +114,10 @@ const speciesSeed = [
       name_call: "pearl",
       gestation: 20,
       imageUrl: "/assets/images/pearl-oyster.jpg",
-      description: "Pearl Oyster Description"
+      description: "Pearl Oyster is a well-loved, popular cultivar that is suspiciously missing from the american culinary tradition",
+      recipes: ["https://www.allrecipes.com/recipe/247435/oyster-mushroom-pasta/?internalSource=hub%20recipe&referringContentType=Search", "https://juliasalbum.com/oyster-mushrooms-garlic-and-green-onions-saute-paleo-gluten-free/"],
+      fun_facts: ["Throughout the world, pearl oyster mushrooms are the most common of the oyster mushrooms used by chef's.", "During the growing process, the more light introduced, the more white pearly color this species' caps will become.",  "Pleurotus ostreatus grow naturally all over the globe. It 'throws off' various sub strains including the Blue Oyster Mushroom (pleurotus columbinus).", "Oyster mushrooms are naturally high in lovastatin, a drug approved by the FDA for lowering `bad` cholesterol and raising `good` cholesterol. Higher concentrations of lovastatin are in the caps then the stems, more concentrated on the mature gills, and especially in the spores." ],
+      grows_on: "Wide range of substrates including straw (wheat | rye | oat | rice | | barley straw), corn, coffee grounds, banana plant & fruit waste, most hardwoods & hardwood by-products (sawdust | paper), compost & more!"
   },
   {
       name_latin: "Pleurotus djamor",
@@ -119,7 +125,10 @@ const speciesSeed = [
       name_call: "pink",
       gestation: 15,
       imageUrl: "/assets/images/pink-oyster.jpg",
-      description: "Pink Oyster Description"
+      description: "Pink Oyster is a tropical pleurotus species that is beautiful and tasty",
+      recipes: ["https://espressomushroom.co.uk/hot-pink-oyster-mushroom-saute", "https://www.giverecipe.com/fried-oyster-mushroom/", "https://www.finecooking.com/recipe/rustic-bread-stuffing-with-dried-cranberries-hazelnuts-oyster-mushrooms"],
+      fun_facts: ["Pink oyster mushrooms contain fiber, potassium, copper, riboflavin, vitamin B6, folate and ergothioneine - an antioxidant that may reduce instances of cardiovascular disease by helping to prevent plaque build-up in the arteries. ", "Also known as the Salmon oyster, Flamingo oyster, and the Strawberry oyster, Pink Flamingo oyster mushrooms grow on hardwood trees and are native to tropical regions around the world.", "These mushrooms have a very short shelf life making them difficult to be sold in supermarkets, so they are predominately found at farmers markets"],
+      grows_on: "Generally grown in warm weather climates on straw | sawdust | wood | paper | hay"
   },
   {
       name_latin: "Pleurotus eringyi",
@@ -127,32 +136,11 @@ const speciesSeed = [
       name_call: "king",
       gestation: 20,
       imageUrl: "/assets/images/king-oyster.jpg",
-      description: "King Oyster"
-  },
-    // {
-  //     name_latin: "Pleurotus pulmonarius",
-  //     name_common: "Italian Oyster / Phoenix Mushroom",
-  //     name_call: "phoenix",
-  //     gestation: 17
-  // },
-  // {
-  //     name_latin: "Pleurotus ostreatus var columbinus",
-  //     name_common: "Blue Oyster",
-  //     name_call: "blue",
-  //     gestation: 10
-  // },
-  // {
-  //     name_latin: "Pleurotus citrinopileatus",
-  //     name_common: "Golden Oyster",
-  //     name_call: "golden",
-  //     gestation: 12
-  // },
-    // {
-  //     name_latin: "Pholiota adiposa",
-  //     name_common: "Chestnut",
-  //     name_call: "chestnut",
-  //     gestation: 22
-  // },
+      description: "King Oyster is a hearty mushroom prized in the culinary world for its versatility",
+      recipes: ["https://omnivorescookbook.com/recipes/teriyaki-king-oyster-mushroom", "https://www.cooksillustrated.com/how_tos/6059-king-oyster-mushrooms"],
+      fun_facts: ["Unlike other oyster varieties, the King Oyster doesn’t usually produce a shelf like formation, but instead produces a mushroom with a round cap and a defined stem. The stem is highly desired for culinary uses.", "If grown indoors with minimal fresh air and low light levels, the mushroom will grow a fat tall stem and a tiny cap, while lots of fresh air and light will produce a mushroom with a small stem and large dark cap.","Can be found growing from the roots of hardwood trees, emerging from underneath the soil, in Southern Europe | North Africa | Central Asia | Russia." ],
+      grows_on: "Grows best on sterilized supplemented hardwood sawdust supplemented with 10-15% wheat bran. Will also grow well on straw, however unlike other Oyster species, the yield will be reduced."
+  }
 ];
 
 db.Species
