@@ -42,6 +42,9 @@ const styles = theme => ({
     fontWeight: 600,
     marginBottom: 0,
     color: "#2f2f2f"
+  },
+  noBulletList: {
+    listStyleType: "none"
   }
 });
 
@@ -49,51 +52,66 @@ function CenteredGrid(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.root}>
-    
+<div className={classes.root}>
 
-      <Grid container spacing={16} style={{width: '100%'}}>
+<Grid container spacing={16} style={{width: '100%'}}>
 
-        {/* THIS GRID IS JUST FOR ALIGNMENT */}
-        <Grid item xs={1}>
-        </Grid>
+  {/* THIS GRID IS JUST FOR ALIGNMENT */}
+  <Grid item xs={1}>
+    <p className={classes.paper}></p>
+  </Grid>
 
-        <Grid item xs={7}>
-          <p className={classes.paper}>
-            <Paper style={{padding: 10, marginTop: "57%"}}>
-              <p className={classes.headline}>
-                Welcome to You Me Mushrooms!
-              </p>
-              <hr></hr>
-              Growing and harvesting specialty gourmet, medicinal mushrooms for San Diego restaurants, neighborhood markets, and community members.
-          </Paper>
+  <Grid item xs={7}>
+    <p className={classes.paper}>
+      <Paper style={{padding: 10, marginTop: 455}}>
+        <p className={classes.headline}>
+          You. Me. Mushrooms.
+        </p>
+        <p className={classes.headline}>
+          Who we are and what we do
+        </p>
+        <hr></hr>
+        We grow, harvest, and deliver specialty gourmet culinary & medicinal mushrooms for San Diego restaurants, neighborhood markets, and direct-to-public sales.
+
+        We are on a mission to expand awareness & availability of these healthy delectibles to our San Diego community.
+    </Paper>
+    </p>
+  </Grid>
+
+  <Grid item xs={4}>
+    <p className={classes.paper}></p>
+  </Grid>
+  
+  <Grid item xs={4}></Grid>
+
+  <Grid item xs={7}>
+      <p className={classes.paper}>
+        <Paper style={{padding: 10, marginBottom: 200}}>
+          <p className={classes.headline2}>
+          Local. Nutritious. Delicious.               
+          </p> 
+          <p className={classes.headline2}>
+          ALL the mushrooms we grow are naturally          
           </p>
-        </Grid>
-
-        <Grid item xs={4}>
-          <p className={classes.paper}></p>
-        </Grid>
-        
-        <Grid item xs={4}></Grid>
-
-        <Grid item xs={7}>
-            <p className={classes.paper}>
-              <Paper style={{padding: 10, marginBottom: 200}}>
-                <p className={classes.headline2}>
-                Local. Nutritious. Delicious. Sustainable.                
-                </p> 
-                <hr></hr>
-                 Available at local restaurants, neighborhood markets, and direct to public sale.
-              </Paper>
-            </p>
-            </Grid>
-
-            <Grid item xs={1}>
-            <p className={classes.paper}></p>
-            </Grid>
-        
+          <hr></hr>
+          <ul className={classes.noBulletList}>
+            <li>No fat | choloestorol | gluten </li>
+            <li>Low in calories, high in nutrition</li>
+            <li>On average, contain over 18 different amino acids</li>
+            <li>High in niacin</li>
+            <li>Good source of: potassium | riboflavin | pantothenic acid | phosphorus | copper</li>
+            <li>Contain 1,3/1,6 Beta-Glucans</li>
+          </ul>
+          
+        </Paper>
+      </p>
       </Grid>
-      
+
+      <Grid item xs={1}>
+      <p className={classes.paper}></p>
+      </Grid>
+  
+      </Grid>
     </div>
   );
 }

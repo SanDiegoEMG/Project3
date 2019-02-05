@@ -10,9 +10,9 @@ class Signup extends Component {
   }
 
   componentWillMount() {
-    if (this.Auth.loggedIn()) {
-      this.props.history.replace('/');
-    }
+    // if (this.Auth.loggedIn()) {
+    //   this.props.history.replace('/');
+    // }
   }
 
   handleFormSubmit = event => {
