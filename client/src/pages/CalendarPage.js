@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Calendar from "../components/Calendar/Calendar";
+import BottomAppBar from "../components/Footer/Footer"
 
 // let imgUrl = 'https://travelblond.files.wordpress.com/2015/11/gaslamp-quarter.jpg';
 const styles = theme => ({
@@ -32,6 +33,7 @@ function CenteredGrid(props) {
         </Grid>
 
       </Grid>
+      <BottomAppBar/>
     </div>
   );
 }
