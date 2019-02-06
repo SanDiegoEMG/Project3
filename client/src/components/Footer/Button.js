@@ -28,10 +28,10 @@ function ContainedButtons(props) {
   const { classes } = props;
   return (
     <div className={classes.btnTxt}>
-      <Button variant="contained" className={classes.button}>
+      <Button variant="contained" className={classes.button} onClick={(e) => { if (window.confirm('Congratulations! You are now signed up to receive news!')) this.deleteItem(e) } }>
         <MailOutline />
         Subscribe
-      </Button>
+      </Button >
     </div>
   );
 }
