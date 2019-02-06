@@ -4,6 +4,7 @@
     margin-bottom: 8px;
     background-color: #C60000;
     color: #ffc1c1;
+    z-index: 50000;
 }
 
 img{

@@ -22,24 +22,25 @@ export default {
     return axios.delete(`/api/species/${id}`)
   },
 
-  // get all batch documents as array of objects
-  // getAllBatch: () => {
-  //   return axios.get(`/api/batch`);
-  // },
-
-  // // start a new batch document (use on Admin page)
-  // startBatch: (batchNum, bagNum, species, bagSize) => {
-  //   return axios.post('api/batch', {batchNum: batchNum, bagNum: bagNum, species: species, bagSize: bagSize}); 
-  // }
+  // get data associated with one batch id
+  getOneBatch: (id) => {
+    return axios.get(`/api/batch/${id}`);
+  },
+  
+  // get request of all batches
+  getAllBatches: () => {
+    return axios.get(`/api/batch`);
+  },
 
   // start a new batch document (use on Admin page)
-  startBatch: (batchNum, bagNum, species, bagSize, growthStage) => {
+  startBatch: (batchNum, bagNum, species, bagSize, growthStage, uniqueID) => {
     return axios.post('api/batch', {
       batchNum: batchNum,
       bagNum: bagNum,
       species: species,
       bagSize: bagSize,
-      growthStage: growthStage
+      growthStage: growthStage,
+      uniqueID: uniqueID
     }); 
   }
 };
