@@ -49,9 +49,9 @@ class Batch extends Component {
 
   // Kat Search Batch --------------------
   searchBatch = () => {
-    // const { searchNumber } = this.state;
+    const { searchNumber } = this.state;
     axios
-      .get("/api/batch/")
+      .get(`/api/batch/${searchNumber}`)
       .then(data => {
         this.setState({ batches: data.data });
       })
@@ -91,6 +91,10 @@ class Batch extends Component {
               </div>
               <div className="row">
               <div className="col-sm-1"></div>
+                {`Bag Number: ${batch.bagNum}`}
+              </div>
+              <div className="row">
+              <div className="col-sm-1"></div>
                 {`Bag Size: ${batch.bagSize}`}
               </div>
               <div className="row">
@@ -99,7 +103,7 @@ class Batch extends Component {
               </div>
               <div className="row">
               <div className="col-sm-1"></div>
-                {`Batch ID: ${batch.batchNum.toString() + batch.bagSize.toString()}`}
+                {`Batch ID: ${batch.batchNum.toString() + batch.bagNum.toString()}`}
               </div>
             
             </div>
@@ -178,18 +182,19 @@ class Batch extends Component {
           <div className="col-sm-4">
             {/* Kat Search Batch -------------------- */}
             
-            <div>
+            <div style={{marginBottom: "10px"}}>
               <label htmlFor="bagSize">Search all batches: </label>
-              {/* <input
+              <input
                 className="form-control"
                 placeholder="Enter batch #"
                 name="searchNumber"
                 type="number"
                 id="bagSize"
                 onChange={this.handleChange}
-              /> */}
+              />
               <br/>
               <button onClick={this.searchBatch} className="btn btn-primary">Search</button>
+              
             </div>
             
             {batchRows}
