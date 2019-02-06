@@ -107,7 +107,7 @@ const speciesSeed = [
       gestation: 15,
       imageUrl: "/assets/images/lions-mane.jpg",
       description: "Lion's Mane gets attention because of its appearance, but it wins hearts because of its taste and oh-so-good-for-you nutrition",
-      recipes: ["http://www.sugardetox.me/recipe/sauteed-lions-mane-mushroom/", "http://www.randwich.es/blog/2015/10/19/pan-fried-lions-mane-mushroom", ],
+      recipes: ["http://www.sugardetox.me/recipe/sauteed-lions-mane-mushroom/", "http://www.randwich.es/blog/2015/10/19/pan-fried-lions-mane-mushroom", "http://spartamushrooms.com/mushroom-soup/"],
       fun_facts: ["Believed to stimulate nerve growth enough to improve minor cognitive impairment, Lion's Mane is considered a gourmet and medicinal species", "One of the more interesting types of edible mushrooms, in place of the traditional mushroom cap is a large clump of 'teeth', which range from a few millimeters to a centimetermeter long. Shaved off and cooked on their own, these 'teeth' taste remarkably like delicate crab", "Most commonly found on dead and decaying hardwood logs throughout North America in the fall." ],
       grows_on: "Grows best on hardwood sawdust supplement with 10-20% wheat bran."
   },
