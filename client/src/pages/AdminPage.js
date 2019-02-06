@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 // import AuthService from '../components/AuthService';
 import API from "../utils/API";
+import axios from "axios";
 // import './Login.css'
 // import {Link} from 'react-router-dom';
 
@@ -12,7 +13,8 @@ class Batch extends Component {
       bagNum: "",
       species: "",
       bagSize: "",
-      growthStage: ""
+      growthStage: "",
+      bagSize: ""
   }
   }
 
@@ -48,7 +50,50 @@ class Batch extends Component {
     });
   };
 
+  // Kat Search Batch --------------------
+  searchBatch = () => {
+    const { searchNumber } = this.state;
+    axios
+      .get("/api/batch" + searchNumber)
+      .then(data => {
+        console.log(data);
+        this.setState({ batches: data.data });
+      })
+      .catch(err => console.log(err));
+  };
+  // Kat Search Batch --------------------
+
   render() {
+    // Kat Search Batch --------------------
+    const { batches } = this.state;
+    let batchRows;
+    if (batches) {
+      batchRows = batches.map(batch => {
+        return (
+          <div
+            style={{
+              border: "1px solid #ced4da",
+              backgroundColor: "white",
+              borderRadius: ".25rem",
+              color: "#007bff",
+              textDecoration: "underline",
+              paddingTop: 10,
+              paddingBottom: 10,
+              paddingLeft: 10,
+              marginBottom: 5
+            }}
+          >
+            <div>
+              {`Batch Number: ${batch.batchNum}, Bag Size: ${batch.bagSize}`}
+            </div>
+          </div>
+        );
+      });
+    } else {
+      batchRows = <p>Loading...</p>;
+    }
+    // Kat Search Batch --------------------
+
     return (
       <div className="container">
       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
@@ -102,6 +147,26 @@ class Batch extends Component {
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
         {/* <p><Link to="/signup">Go to Signup</Link></p> */}
+
+        {/* Kat Search Batch -------------------- */}
+        <br/>
+        <div>
+          <label htmlFor="bagSize">Search for a batch:</label>
+          <input
+            className="form-control"
+            placeholder="Enter batch #"
+            name="searchNumber"
+            type="number"
+            id="bagSize"
+            onChange={this.handleChange}
+          />
+          <br/>
+          <button onClick={this.searchBatch} className="btn btn-primary">Search</button>
+        </div>
+        <br/>
+        {batchRows}
+        {/* Kat Search Batch -------------------- */}
+        
       </div>
 
     );
