@@ -2390,8 +2390,6 @@ resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
-<<<<<<< HEAD
-=======
 
 resolve@^1.10.0:
   version "1.10.0"
@@ -2399,7 +2397,6 @@ resolve@^1.10.0:
   integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
   dependencies:
     path-parse "^1.0.6"
->>>>>>> 35709476ab933772eb504095b243e3eb90d3bacd
 
 ret@~0.1.10:
   version "0.1.15"
