@@ -208,4 +208,5 @@ class Batch extends Component {
   }
 }
 
-export default Batch;
+// export default Batch;
+export default withAuth(Batch);
