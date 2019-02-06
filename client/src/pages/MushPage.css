@@ -1,0 +1,8 @@
+@media only screen and (max-width: 400px) {
+    #mushpage-mobile-container{
+        max-width: 100%;
+    }
+    .MuiGrid-grid-xs-3-32{
+        max-width: 100%;
+    }
+  }
