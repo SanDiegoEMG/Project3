@@ -74,7 +74,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
 app.get('/', isAuthenticated /* Using the express jwt MW here */, (req, res) => {
   res.send('You are authenticated'); //Sending some response when authenticated
 });
@@ -91,11 +90,12 @@ app.use(function (err, req, res, next) {
 
 const batchSeed = [
   {
-    batchNum: 1234,
-    bagNum: 12,
+    batchNum: 11,
+    bagNum: 20,
     species: "Red Oyster",
     bagSize: 10,
-    growthStage: 5
+    growthStage: 5,
+    uniqueID: 2019020420
   }
 ]
 
@@ -221,7 +221,6 @@ app.delete("/api/species/:id", (req, res) =>{
   .catch(err => res.status(422).json(err));
 }),
 
-
 // get json of all documents in Batch collection
 app.get("/api/batch", (req, res) => {
   db.Batch
@@ -229,14 +228,6 @@ app.get("/api/batch", (req, res) => {
     .then(datafoo => res.json(datafoo))
     .catch(err => res.status(400).json(err));
 });
-
-// // create new BATCH document
-// app.post("/api/batch", (req, res) => {
-//   db.Batch
-//     .create(req.body)
-//     .then(datafoo => res.json(datafoo))
-//     .catch(err => res.status(400).json(err));
-// });
 
 // BATCH ROUTE
 app.post('/api/batch', (req, res) => {
