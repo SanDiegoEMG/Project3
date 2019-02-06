@@ -7,26 +7,3 @@ body, html{
     position: fixed;
 }
 
-@media only screen and (max-width: 400px) {
-    .collapse:not(.show){
-        display: flex;
-    }
-
-    .navbar-brand img{
-        display: none;
-    }
-
-    .navbar-toggler{
-        display: none;
-    }
-
-    .nav-link{
-        float: left;
-
-    }
-
-    .navbar {
-        background-color: rgba(240, 248, 255, 0.103);
-    }
-
-  }
