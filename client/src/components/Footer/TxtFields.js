@@ -55,9 +55,10 @@ class FilledTextFields extends React.Component {
           label="Email"
           className={classes.textField}
           value={this.state.email}
+          onChange={this.handleChange("email")}
           type="email"
-          name="email"
-          autoComplete="email"
+          // name="email"
+          // autoComplete="email"
           margin="normal"
           variant="filled"
         />
