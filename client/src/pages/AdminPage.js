@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import AuthService from '../components/AuthService';
+import withAuth from '../components/withAuth';
 import API from "../utils/API";
 import axios from "axios";
 // import './Login.css'
