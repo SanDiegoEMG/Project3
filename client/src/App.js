@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import logo from './logo.svg';
-
 import Home from "./pages/HomePage"
 import './App.css';
 import BottomAppBar from "./components/Footer/Footer"
