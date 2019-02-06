@@ -230,6 +230,16 @@ app.get("/api/batch", (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+// Kat Search Batch --------------------
+app.get("/api/batch/:batchNumber", (req, res) => {
+  const { batchNumber } = req.params;
+
+  db.Batch.find({ where: { batchNum: batchNumber }})
+  .then(datafoo => res.json(datafoo))
+  .catch(err => res.status(400).json(err));
+});
+// Kat Search Batch --------------------
+
 // // create new BATCH document
 // app.post("/api/batch", (req, res) => {
 //   db.Batch
