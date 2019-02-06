@@ -22,10 +22,10 @@ const styles = theme => ({
     color: "#fcf1e5",
     position: "absolute",
     marginTop: 5,
-    right: 330,
+    right: 270,
     fontSize: ".9em",
     display: "flex",
-    textTransform: "lowercase"
+    // textTransform: "lowercase"
   },
   signUp: {
     position: "absolute",
@@ -61,7 +61,7 @@ class BottomAppBar extends Component {
         {/* <CssBaseline /> */}
         <AppBar position="fixed" color="primary" className={classes.appBar}>
           <div className={classes.stayInfo}>
-            <p>Stay informed as we grow and harvest ...</p>
+            <p>We will not share your personal information.</p>
           </div>
           <div className={classes.signUp}>
             <div className={classes.signUpTxt}>
