@@ -16,6 +16,9 @@ const batchSchema = new Schema({
     },
     growthStage: {
         type: Number,
+    },
+    uniqueID: {
+        type: Number,
     }
 });
 
