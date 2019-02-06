@@ -4,6 +4,8 @@ import MediaCard from "../components/MediaCard/MediaCard";
 import Grid from "@material-ui/core/Grid";
 import '../pages/MushPage.css';
 import API from "../utils/API";
+import BottomAppBar from "../components/Footer/Footer"
+
 
 class MushPage extends Component {
 
@@ -79,7 +81,7 @@ class MushPage extends Component {
           </Grid>
         </Grid>
       </Grid>
-
+      <BottomAppBar/>
       </div>
       );
     }
