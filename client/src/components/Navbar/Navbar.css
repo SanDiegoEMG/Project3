@@ -17,3 +17,32 @@ img{
     border-style: double;
     border-color: #C60000;
 }
+
+@media only screen and (max-width: 1000px) {
+    .collapse:not(.show){
+        display: flex;
+    }
+
+    .navbar-brand img{
+        display: none;
+    }
+
+    .navbar-toggler{
+        display: none;
+    }
+
+    #nav-for-mobile{
+        float: left;
+        color: black;
+    }
+
+    .nav-item{
+        padding: 10px;
+        background-color: rgba(249, 251, 255, 0.452);
+    }
+
+    .navbar {
+        background-color: rgba(240, 248, 255, 0.0);
+    }
+
+  }
