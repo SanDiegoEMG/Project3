@@ -26,8 +26,8 @@ const styles = theme => ({
 
 class FilledTextFields extends React.Component {
   state = {
-    name: "Em G",
-    email: "emg@gmail.com"
+    name: "",
+    email: ""
   };
 
   handleChange = name => event => {
