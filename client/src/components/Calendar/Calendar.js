@@ -17,7 +17,9 @@ class MyApp extends Component {
  
   render() {
     return (
-      <div>
+      <div style={{
+        marginTop: 100
+      }}>
         <Calendar 
           onChange={this.onChange}
           value={this.state.date}
