@@ -13,28 +13,10 @@ class Batch extends Component {
       species: "",
       bagSize: "",
       growthStage: "",
-      
+      uniqueID: ""
   }
   }
 
-  componentDidMount() {
-    this.showBatches();
-  }
-
-  showBatches = () => {
-    API.getAllBatches()
-    .then(res => {
-      this.setState({ batchArray: res.data });
-      console.log("Batch data: " + this.state.batchArray)
-    })
-    .catch(err => console.log(err));
-  };
-
-  getBatchInfo = (uniqueID) => {
-    this.setState ({
-      uniqueID
-    });
-  };
 
   handleFormSubmit = event => {
     
@@ -67,11 +49,10 @@ class Batch extends Component {
 
   // Kat Search Batch --------------------
   searchBatch = () => {
-    const { searchNumber } = this.state;
+    // const { searchNumber } = this.state;
     axios
-      .get("/api/batch" + searchNumber)
+      .get("/api/batch/")
       .then(data => {
-        console.log(data);
         this.setState({ batches: data.data });
       })
       .catch(err => console.log(err));
@@ -85,7 +66,8 @@ class Batch extends Component {
     if (batches) {
       batchRows = batches.map(batch => {
         return (
-          <div
+          // batch.toString removes error log in console
+          <div key={batch._id}
             style={{
               border: "1px solid #ced4da",
               backgroundColor: "white",
@@ -99,7 +81,27 @@ class Batch extends Component {
             }}
           >
             <div>
-              {`Batch Number: ${batch.batchNum}, Bag Size: ${batch.bagSize}`}
+              <div className="row">
+              <div className="col-sm-1"></div>
+                {`Species: ${batch.species}`}
+              </div>
+              <div className="row">
+              <div className="col-sm-1"></div>
+                {`Batch Number: ${batch.batchNum}`}
+              </div>
+              <div className="row">
+              <div className="col-sm-1"></div>
+                {`Bag Size: ${batch.bagSize}`}
+              </div>
+              <div className="row">
+              <div className="col-sm-1"></div>
+                {`Growth Stage: ${batch.growthStage}`}
+              </div>
+              <div className="row">
+              <div className="col-sm-1"></div>
+                {`Batch ID: ${batch.batchNum.toString() + batch.bagSize.toString()}`}
+              </div>
+            
             </div>
           </div>
         );
@@ -116,89 +118,85 @@ class Batch extends Component {
 
         <h1 className="AdminpageTitle">Batch Information</h1>
         <div className="row">
+          <div className="col-sm-4">
 
+              <form onSubmit={this.handleFormSubmit}>
+                <div className="form-group">
+                  <label htmlFor="batchNum">Batch Number:</label>
+                  <input className="form-control"
+                        placeholder="20190204"
+                        name="batchNum"
+                        type="number"
+                        id="batchNum"
+                        onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="bagNum">Bag Number:</label>
+                  <input className="form-control"
+                        placeholder="Enter Bag Number"
+                        name="bagNum"
+                        type="number"
+                        id="bagNum"
+                        onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="species">Species:</label>
+                  <input className="form-control"
+                        placeholder="Enter Species Here"
+                        name="species"
+                        type="text"
+                        id="species"
+                        onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="bagSize">Bag Size:</label>
+                  <input className="form-control"
+                        placeholder="Enter Bag Size"
+                        name="bagSize"
+                        type="number"
+                        id="bagSize"
+                        onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="growthStage">Growth Stage:</label>
+                  <input className="form-control"
+                        placeholder="Enter Growth Stage"
+                        name="growthStage"
+                        type="number"
+                        id="growthStage"
+                        onChange={this.handleChange}/>
+                </div>
+                
 
-          <form onSubmit={this.handleFormSubmit}>
-            <div className="form-group">
-              <label htmlFor="batchNum">Batch Number:</label>
-              <input className="form-control"
-                    placeholder="20190204"
-                    name="batchNum"
-                    type="number"
-                    id="batchNum"
-                    onChange={this.handleChange}/>
+                <button type="submit" className="btn btn-primary">Submit</button>
+              </form>
             </div>
-            <div className="form-group">
-              <label htmlFor="bagNum">Bag Number:</label>
-              <input className="form-control"
-                    placeholder="Enter Bag Number"
-                    name="bagNum"
-                    type="number"
-                    id="bagNum"
-                    onChange={this.handleChange}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="species">Species:</label>
-              <input className="form-control"
-                    placeholder="Enter Species Here"
-                    name="species"
-                    type="text"
-                    id="species"
-                    onChange={this.handleChange}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="bagSize">Bag Size:</label>
-              <input className="form-control"
-                    placeholder="Enter Bag Size"
-                    name="bagSize"
-                    type="number"
-                    id="bagSize"
-                    onChange={this.handleChange}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="growthStage">Growth Stage:</label>
-              <input className="form-control"
-                    placeholder="Enter Growth Stage"
-                    name="growthStage"
-                    type="number"
-                    id="growthStage"
-                    onChange={this.handleChange}/>
-            </div>
-            {/* <div className="form-group">
-              <label htmlFor="uniqueID">BatchID</label>
-              <input className="form-control"
-                    placeholder="Batch Number/Bag Number"
-                    name="uniqueID"
-                    type="number"
-                    id="uniqueID"
-                    onChange={this.handleChange}/>
-            </div> */}
+
+          
+          {/* <p><Link to="/signup">Go to Signup</Link></p> */}
+
+          <div className="col-sm-4">
+            {/* Kat Search Batch -------------------- */}
             
+            <div>
+              <label htmlFor="bagSize">Search all batches: </label>
+              {/* <input
+                className="form-control"
+                placeholder="Enter batch #"
+                name="searchNumber"
+                type="number"
+                id="bagSize"
+                onChange={this.handleChange}
+              /> */}
+              <br/>
+              <button onClick={this.searchBatch} className="btn btn-primary">Search</button>
+            </div>
+            
+            {batchRows}
+            {/* Kat Search Batch -------------------- */}
 
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
+          </div>
         </div>
-        {/* <p><Link to="/signup">Go to Signup</Link></p> */}
-
-        {/* Kat Search Batch -------------------- */}
-        <br/>
-        <div>
-          <label htmlFor="bagSize">Search for a batch:</label>
-          <input
-            className="form-control"
-            placeholder="Enter batch #"
-            name="searchNumber"
-            type="number"
-            id="bagSize"
-            onChange={this.handleChange}
-          />
-          <br/>
-          <button onClick={this.searchBatch} className="btn btn-primary">Search</button>
-        </div>
-        <br/>
-        {batchRows}
-        {/* Kat Search Batch -------------------- */}
-        
       </div>
 
     );

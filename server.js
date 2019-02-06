@@ -95,7 +95,6 @@ const batchSeed = [
     species: "Red Oyster",
     bagSize: 10,
     growthStage: 5,
-    uniqueID: 2019020420
   }
 ]
 

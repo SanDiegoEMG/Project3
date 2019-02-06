@@ -32,6 +32,11 @@ export default {
   //   return axios.post('api/batch', {batchNum: batchNum, bagNum: bagNum, species: species, bagSize: bagSize}); 
   // }
 
+  // get data associated with one batch id
+  getOneBatch: (id) => {
+    return axios.get(`/api/batch/${id}`);
+  },
+  
   // get request of all batches
   getAllBatches: () => {
     return axios.get(`/api/batch`);
