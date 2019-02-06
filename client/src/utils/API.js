@@ -23,7 +23,7 @@ export default {
   },
 
   // get data associated with one batch id
-  getOneBatch: (id) => {
+  searchBatch: (id) => {
     return axios.get(`/api/batch/${id}`);
   },
   
