@@ -14,7 +14,6 @@ class Batch extends Component {
       species: "",
       bagSize: "",
       growthStage: "",
-      bagSize: ""
   }
   }
 
