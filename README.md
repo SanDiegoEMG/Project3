@@ -1,4 +1,4 @@
-# &#35; You Me Mushroom&nbsp;&nbsp;<img src="https://img.icons8.com/cotton/48/000000/mushroom.png">
+# &#35; You Me Mushrooms&nbsp;&nbsp;<img src="https://img.icons8.com/cotton/48/000000/mushroom.png"><img src="https://img.icons8.com/color/48/000000/food.png">
 
 ## Description
 We grow, harvest, and deliver specialty gourmet culinary & medicinal mushrooms for San Diego restaurants, neighborhood markets, and direct-to-public sales. We are on a mission to expand awareness & availability of these healthy delectables to our San Diego community.
