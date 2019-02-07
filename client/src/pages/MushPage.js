@@ -49,8 +49,9 @@ class MushPage extends Component {
         <Grid container spacing={24} style={{width: '100%', marginTop: "12%"}}>
           <Grid item xs={3} id="mushpage-mobile-container" style={{marginTop: 100}}>
             {/* glossary sidebar */}
+            <div className="expansion-panel-mush">
             <ControlledExpansionPanels />
-
+            </div>
           </Grid>
           <Grid item xs={9} id="mushpage-mobile-container" style={{width:"100%"}}>
             
@@ -73,7 +74,7 @@ class MushPage extends Component {
                   }
 
                   <Grid item xs={3}></Grid>
-                  <Grid item xs={6} style={{marginTop: 20}}>
+                  <Grid item xs={6} id="mushpage-description" style={{marginTop: 20}}>
                     {this.state.description}
                   </Grid>
                   <Grid item xs={2}></Grid>

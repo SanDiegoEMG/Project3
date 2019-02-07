@@ -58,41 +58,41 @@ function CenteredGrid(props) {
 
   {/* THIS GRID IS JUST FOR ALIGNMENT */}
   <Grid item xs={1}>
-    <p className={classes.paper}></p>
+    <div className={classes.paper}></div>
   </Grid>
 
   <Grid item xs={7}>
-    <p className={classes.paper}>
+    <div className={classes.paper}>
       <Paper style={{padding: 10, marginTop: 455}}>
-        <p className={classes.headline}>
+        <div className={classes.headline}>
           You. Me. Mushrooms.
-        </p>
-        <p className={classes.headline}>
+        </div>
+        <div className={classes.headline}>
           Who we are and what we do
-        </p>
+        </div>
         <hr></hr>
         We grow, harvest, and deliver specialty gourmet culinary & medicinal mushrooms for San Diego restaurants, neighborhood markets, and direct-to-public sales.
 
         We are on a mission to expand awareness & availability of these healthy delectibles to our San Diego community.
     </Paper>
-    </p>
+    </div>
   </Grid>
 
   <Grid item xs={4}>
-    <p className={classes.paper}></p>
+    <div className={classes.paper}></div>
   </Grid>
   
   <Grid item xs={4}></Grid>
 
   <Grid item xs={7}>
-      <p className={classes.paper}>
+      <div className={classes.paper}>
         <Paper style={{padding: 10, marginBottom: 200}}>
-          <p className={classes.headline2}>
+          <div className={classes.headline2}>
           Local. Nutritious. Delicious.               
-          </p> 
-          <p className={classes.headline2}>
+          </div> 
+          <div className={classes.headline2}>
           ALL the mushrooms we grow are naturally          
-          </p>
+          </div>
           <hr></hr>
           <ul className={classes.noBulletList}>
             <li>No fat | choloestorol | gluten </li>
@@ -104,11 +104,11 @@ function CenteredGrid(props) {
           </ul>
           
         </Paper>
-      </p>
+      </div>
       </Grid>
 
       <Grid item xs={1}>
-      <p className={classes.paper}></p>
+      <div className={classes.paper}></div>
       </Grid>
   
       </Grid>

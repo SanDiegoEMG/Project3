@@ -65,8 +65,8 @@ class ControlledExpansionPanels extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-            <p>The vegetative part of fungi, consisting of a network of fine white filaments (hyphae).</p> 
-              <p>Mycelium is like the 'root' of the mushroom (fungi are not plants .... in fact, they are more closely related to animals than plants)</p>
+            The vegetative part of fungi, consisting of a network of fine white filaments (hyphae). 
+              Mycelium is like the 'root' of the mushroom (fungi are not plants .... in fact, they are more closely related to animals than plants)
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -81,9 +81,9 @@ class ControlledExpansionPanels extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-             <p>Defined biologically as a group of individuals that can breed together and can not breed with other groups.</p>
+             Defined biologically as a group of individuals that can breed together and can not breed with other groups.
              
-             <p>Cultivated mushrooms are grown in controlled environments and are easy to identify.</p>
+             Cultivated mushrooms are grown in controlled environments and are easy to identify.
               
              Many wild species of mushrooms look alike, so we use the following key identifiers to tell them apart: substrate, stature, spores, smell, staining.
             

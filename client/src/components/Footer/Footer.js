@@ -61,11 +61,11 @@ class BottomAppBar extends Component {
         {/* <CssBaseline /> */}
         <AppBar position="fixed" color="primary" className={classes.appBar}>
           <div className={classes.stayInfo}>
-            <p>We will not share your personal information.</p>
+            <div>We will not share your personal information.</div>
           </div>
           <div className={classes.signUp}>
             <div className={classes.signUpTxt}>
-              <p>Newsletter Sign Up!</p>
+              <div>Newsletter Sign Up!</div>
             </div>
             <div>
               <FilledTextFields />

@@ -24,7 +24,8 @@ img{
     }
 
     .navbar-brand img{
-        display: none;
+        width: 50%;
+        height: 300%;
     }
 
     .navbar-toggler{
@@ -38,11 +39,20 @@ img{
 
     .nav-item{
         padding: 10px;
-        background-color: rgba(249, 251, 255, 0.452);
+        background-color: rgba(204, 214, 233, 0.575);
+        border-radius: 60%;
     }
 
-    .navbar {
+    .navbar-nav{
         background-color: rgba(240, 248, 255, 0.0);
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        position: fixed;
+        padding-top: 80%;
+        padding-left: 0%;
+        font-size: .9rem;
+        z-index: 4000;
     }
 
   }

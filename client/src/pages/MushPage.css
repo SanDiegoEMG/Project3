@@ -5,4 +5,14 @@
     .MuiGrid-grid-xs-3-32{
         max-width: 100%;
     }
+
+    #mushpage-description{
+        max-width: 100%;
+        margin-left: 50px;
+        padding-bottom: 30%;
+    }
+    .expansion-panel-mush{
+        padding-top: 50%;
+    }
+
   }
