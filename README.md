@@ -61,8 +61,8 @@ Try the Application Here: [https://project3-full-stack-react.herokuapp.com/) (`H
 
 
 ## About the Authors:
-[Frank 'Frank' Donnelly](https://github.com/FSDonnelly)
-[Emily 'Em' Goss](https://github.com/SanDiegoEMG)
-[Isao 'Agustin' Chavez](https://github.com/isao92)
-[ShihYung 'Star' Hsu](https://github.com/star104)
-[Katherine 'Kat1' J. Bell](https://github.com/katbytes)
+* [Frank 'Frank' Donnelly](https://github.com/FSDonnelly)
+* [Emily 'Em' Goss](https://github.com/SanDiegoEMG)
+* [Isao 'Agustin' Chavez](https://github.com/isao92)
+* [ShihYung 'Star' Hsu](https://github.com/star104)
+* [Katherine 'Kat1' J. Bell](https://github.com/katbytes)
