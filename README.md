@@ -7,16 +7,16 @@ We grow, harvest, and deliver specialty gourmet culinary & medicinal mushrooms f
 Try the Application Here: [https://project3-full-stack-react.herokuapp.com/) (`Heroku`)
 
 ## The Screenshots
-![Screenshot](/public/assets/images/demo-01.png)
+![Screenshot](client/public/assets/images/demo-01.png)
 `Welcome to You Me Mushrooms!`&#8673;
 
-![Screenshot](/public/assets/images/demo-02.png)
+![Screenshot](client/public/assets/images/demo-02.png)
 `Here are some Fun Facts!`&#8673;
 
-![Screenshot](/public/assets/images/demo-03.png)
+![Screenshot](client/public/assets/images/demo-03.png)
 `Administrators can Create, Read, Update and Delete!`&#8673;
 
-![Screenshot](/public/assets/images/demo-04.png)
+![Screenshot](client/public/assets/images/demo-04.png)
 `Signup to see what's growing!`&#8673;
 
 ## You Me Mushroom Pages
