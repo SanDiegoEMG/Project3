@@ -51,7 +51,9 @@ class Batch extends Component {
 
   // Kat Search Batch --------------------
   searchBatch = () => {
-    const { searchNumber } = this.state;
+    
+    let { searchNumber } = this.state;
+    searchNumber = "";
     axios
       .get(`/api/batch/${searchNumber}`)
       .then(data => {
@@ -186,14 +188,6 @@ class Batch extends Component {
             
             <div style={{marginBottom: "10px"}}>
               <label htmlFor="bagSize">Search all batches: </label>
-              <input
-                className="form-control"
-                placeholder="Enter batch #"
-                name="searchNumber"
-                type="number"
-                id="bagSize"
-                onChange={this.handleChange}
-              />
               <br/>
               <button onClick={this.searchBatch} className="btn btn-primary">Search</button>
               
