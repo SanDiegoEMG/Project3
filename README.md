@@ -1,59 +1,68 @@
-# Create React Express App
+# &#35; You Me Mushrooms&nbsp;&nbsp;<img src="https://img.icons8.com/cotton/48/000000/mushroom.png"><img src="https://img.icons8.com/color/48/000000/food.png">
 
-## About This Boilerplate
+## Description
+We grow, harvest, and deliver specialty gourmet culinary & medicinal mushrooms for San Diego restaurants, neighborhood markets, and direct-to-public sales. We are on a mission to expand awareness & availability of these healthy delectables to our San Diego community.
 
-This setup allows for a Node/Express/React/JWT app which can be easily deployed to Heroku.
+## Getting Started
+Try the Application Here: [https://project3-full-stack-react.herokuapp.com/) (`Heroku`)
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## The Screenshots
+![Screenshot](/public/assets/images/demo-01.png)
+`Welcome to You Me Mushrooms!`&#8673;
 
-An article on how the server is setup with JWT can be found [here](https://hptechblogs.com/using-json-web-token-for-authentication/). This has been modified to use a mongo database instead of hardcoded array of users.
+![Screenshot](/public/assets/images/demo-02.png)
+`Here are some Fun Facts!`&#8673;
 
-The front end has been setup to use JWT as a way of authenticating users and routes. To understand it's structure better please refer to the following article [here](https://hptechblogs.com/using-json-web-token-react/)
+![Screenshot](/public/assets/images/demo-03.png)
+`Administrators can Create, Read, Update and Delete!`&#8673;
 
-Please feel free to modify this code in anyway you see fit for your project. It is a boilerplate setup that tries to make sure you can get something up and running without having to worry about setting up user authentication from scratch.
-I highly suggest you read the articles before jumping in so you can have an better understanding of how everything works in the code. 
+![Screenshot](/public/assets/images/demo-04.png)
+`Signup to see what's growing!`&#8673;
 
-Server-side article and using JWT: https://hptechblogs.com/using-json-web-token-for-authentication/
+## You Me Mushroom Pages
+* Homepage
+* Our Mushrooms
+* User Signup
+* User/Member Login
+* Species Grow Calendar
+* An Administrator Profile
+* What's Currently Growing?
 
-Front End article on using the JWT on a react application: https://hptechblogs.com/using-json-web-token-react/
+## Technologies Utilized
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [React.js](https://reactjs.org)
+* [Node.js](https://nodejs.org/en)
+* [Robo 3T](https://robomongo.org)
+* [MongoDB](https://www.mongodb.com)
+* [Mongoose/MongoDB](https://mongoosejs.com)
+* [Axios](https://www.npmjs.com/package/axios)
+* [JSON Web Token](https://www.npmjs.com/package/jsonwebtoken)
+* [Express](https://www.npmjs.com/package/express)
+* [Morgan](https://www.npmjs.com/package/morgan/v/1.1.1)
+* [React Event Listener](https://www.npmjs.com/package/react-event-listener)
+* [Postman](https://www.getpostman.com)
+* [Google Material-UI](https://material-ui.com)
+* [Model-View-Controller Paradigm](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm)
+* [Heroku](https://www.heroku.com)
+* [mLab MongoDB](https://elements.heroku.com/addons/mongolab)
+* [JavaScript/ES6](http://es6-features.org/#Constants)
+* [JSX](https://reactjs.org/docs/introducing-jsx.html)
+* [Yarn Dependencies MGMT](https://yarnpkg.com/en)
+* [Node Dependencies](https://nodejs.org/en)
+* [jQuery](https://jquery.com/download)
+* [Bootstrap 4](https://getbootstrap.com)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
+* [Google Fonts](https://fonts.google.com)
+* [GitHub](https://github.com)
+* [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6)
+* [Bash GNU](https://www.gnu.org/software/bash)
+* [Google Chrome](https://www.google.com/chrome)
+* [Adobe Photoshop CC 2018](https://www.google.com/chrome)
 
-## Starting the app locally
 
-First off make sure you have a local version of MongoDB running on your machine. This project will make a local database for you called `appDB`.
-
-```
-mongod
-```
-
-Start by installing front and backend dependencies. While in the root directory, run the following command:
-
-```
-yarn install
-```
-
-After all installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-### Create a Git Repo
-
-Once you're ready to deploy, start by making sure your project is a git repository. If so, proceed to the next section, otherwise run the following commands in your terminal:
-
-```
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### Deploying
-
-1. Go onto your heroku account and link your repository through the UI
-2. Go to resources and find mLab as a Add-on
-3. Provision a Mongo Database
-4. Go back and click "Deploy"
+## About the Authors:
+* [Frank 'Frank' Donnelly](https://github.com/FSDonnelly)
+* [Emily 'Em' Goss](https://github.com/SanDiegoEMG)
+* [Isao 'Agustin' Chavez](https://github.com/isao92)
+* [ShihYung 'Star' Hsu](https://github.com/star104)
+* [Katherine 'Kat1' J. Bell](https://github.com/katbytes)
